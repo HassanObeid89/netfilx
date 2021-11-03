@@ -7,13 +7,13 @@ export default function HomeScreen({shows}) {
     //  <Season key={index} data={season.episodes} />
     // ));
     const Movies = shows.filter((movie)=>movie.category === 'movies')
-    .map((movie)=><Row data={movie}/>)
+    .map((movie,index)=><Row key={index} data={movie}/>)
 
     const Series = shows.filter((serie)=>serie.category === 'series')
-    .map((serie)=><Row data={serie}/>)
+    .map((serie,index)=><Row key={index} data={serie}/>)
 
     const Documentaries = shows.filter((documentary)=>documentary.category === 'documentary')
-    .map((documentary)=><Row data={documentary}/>)
+    .map((documentary,index)=><Row key={index} data={documentary}/>)
 
     return (
         <div>
