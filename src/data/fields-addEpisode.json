@@ -1,0 +1,21 @@
+[
+    {
+      "key": "epiname",
+      "label": "Name",
+      "placeholder": "Army Of Thieves",
+      "type": "text"
+    },
+    {
+      "key": "epidescription",
+      "label": "Description",
+      "placeholder": "Is this prequel to Army of the death...",
+      "type": "text"
+    },
+    {
+      "key": "epivideoLink",
+      "label": "Video Id",
+      "placeholder": "StuFfLouaNw",
+      "type": "text"
+    }
+  ]
+  
