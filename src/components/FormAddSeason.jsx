@@ -1,21 +1,17 @@
 import { updateDocument } from "../scripts/firestore";
 
-export default function FormAddSeason({season, setSeason,data}) {
-
-  
-  
-
+export default function FormAddSeason({ season, setSeason, data }) {
   async function onUpdate(event) {
     event.preventDefault();
-    const updatedSerie={
+    const updatedSerie = {
       ...data,
-      seasons:{[season]:[]}
-    }
+      seasons: { [season]: [] },
+    };
     await updateDocument("shows", updatedSerie, data.id);
     updatedSerie.id = data.id;
     // dispatchCourses({ type: "UPDATE_COURSE", payload: updatedCourse });
-    alert("Course updated");
-    setSeason([])
+    alert("Serie updated");
+    setSeason([]);
   }
 
   return (
