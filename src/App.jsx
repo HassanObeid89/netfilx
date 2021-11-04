@@ -3,6 +3,7 @@ import { getCollection } from "./scripts/firestore";
 import HomeScreen from "./pages/HomeScreen";
 import FormAddMovie from "./components/FormAddMovie";
 import FormAddSerie from "./components/FormAddSerie";
+import AdminPage from "./pages/AdminPage";
 
 export default function App() {
   const [shows, setShows] = useState([]);
@@ -25,7 +26,8 @@ export default function App() {
   return (
     <div className="App">
       <h1>Netflix</h1>
-      <HomeScreen shows={shows} />
+      {/* <HomeScreen shows={shows} /> */}
+      <AdminPage shows={shows}/>
       <FormAddMovie />
       <FormAddSerie/>
     </div>

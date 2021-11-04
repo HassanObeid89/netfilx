@@ -1,46 +1,23 @@
-import { useState,useRef } from "react";
-import fieldsAddEpisode from "../data/fields-addEpisode.json";
-import InputField from "./InputField";
-export default function FormAddSeason({
-  seasons,
-  setSeasons,
-  episodes,
-  setEpisodes,
-}) {
-  const [season, setSeason] = useState("");
-  const [episode, setEpisode] = useState({});
-    const seasonRef = useRef(null)
+import { updateDocument } from "../scripts/firestore";
 
-  function onChange(key, value) {
-    const episodeFields = { [key]: value };
-    setEpisode({ ...episode, ...episodeFields });
-    console.log(episode)
-  }
-console.log(episode)
+export default function FormAddSeason({season, setSeason,data}) {
 
-  function handleClick(event) {
+  
+  
+
+  async function onUpdate(event) {
     event.preventDefault();
-    setEpisodes([...episodes, { ...episode }]);
-    setEpisode({});
+    const updatedSerie={
+      ...data,
+      seasons:{[season]:[]}
+    }
+    await updateDocument("shows", updatedSerie, data.id);
+    updatedSerie.id = data.id;
+    // dispatchCourses({ type: "UPDATE_COURSE", payload: updatedCourse });
+    alert("Course updated");
+    setSeason([])
   }
 
-  function addSeason(event) {
-    event.preventDefault();
-    setSeasons([...seasons, season]);
-  }
-  const InputFields = fieldsAddEpisode.map((input, index) => (
-    <InputField key={index} options={input} onChange={onChange} />
-  ));
-
-  const Episodes = episodes.map((episode, index) => (
-    <li key={index}>{episode.name}</li>
-  ));
-
-  const Seasons = seasons.map((season, index) => (
-    <option key={index}>
-      {season}
-    </option>
-  ));
   return (
     <fieldset>
       <label>
@@ -52,17 +29,7 @@ console.log(episode)
           onChange={(event) => setSeason(event.target.value)}
         />
       </label>
-      <button onClick={(event) => addSeason(event)}>Add Season</button>
-      <select
-        required
-        ref={seasonRef}
-        onChange={() => onChange("season", seasonRef.current.value)}
-      >
-        {Seasons}
-      </select>
-      {InputFields}
-      <button onClick={(event) => handleClick(event)}>Add Episodes</button>
-      {Episodes}
+      <button onClick={(event) => onUpdate(event)}>Add Season</button>
     </fieldset>
   );
 }
