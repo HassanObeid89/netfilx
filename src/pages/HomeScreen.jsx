@@ -12,7 +12,7 @@ export default function HomeScreen({shows}) {
     const Series = shows.filter((serie)=>serie.category === 'series')
     .map((serie,index)=><Row key={index} data={serie}/>)
 
-    const Documentaries = shows.filter((documentary)=>documentary.category === 'documentary')
+    const Documentaries = shows.filter((documentary)=>documentary.category === 'documentaries')
     .map((documentary,index)=><Row key={index} data={documentary}/>)
 
     return (
