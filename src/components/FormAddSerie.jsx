@@ -1,9 +1,9 @@
 import { useState } from "react";
+import InputField from './InputField'
+import fieldsAddSerie from '../data/fields-addSerie.json';
 import { createDocument } from "../scripts/firestore";
-import fieldsAddMovie from "../data/fields-addMovie.json";
-import InputField from "./InputField";
 
-export default function FormAddMovie() {
+export default function FormAddSerie() {
   const [values, setValues] = useState({});
 
   function onChange(key, value) {
@@ -14,35 +14,25 @@ export default function FormAddMovie() {
   async function onCreate(event) {
     event.preventDefault();
     const newRelease = {
+        category:'series',
       ...values,
     };
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
-    alert('sucess')
+    alert('Serie added')
     event.target.reset()
   }
 
-  const InputFields = fieldsAddMovie.map((input, index) => (
+  const InputFields = fieldsAddSerie.map((input, index) => (
     <InputField key={index} options={input} onChange={onChange} />
   ));
 
   return (
     <form onSubmit={onCreate}>
-      <h1>Add Movie Or Documentary</h1>
-      <select
-      defaultValue='Choose Category'
-        required
-        onChange={(event) => onChange("category", event.target.value)}
-      >
-        <option disabled>
-          Choose Category
-        </option>
-        <option value="movies">Movie</option>
-        <option value="documentaries">Documentary</option>
-      </select>
+      <h1>Add Serie</h1>
       {InputFields}
       <select
-      defaultValue='Choose Maturity Rating'
+        defaultValue='Choose Maturity Rating'
         required
         onChange={(event) => onChange("maturityRating", event.target.value)}
       >

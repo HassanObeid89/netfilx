@@ -1,7 +1,9 @@
 import { useState, useCallback, useEffect } from "react";
-import { createDocument, getCollection } from "./scripts/firestore";
+import { getCollection } from "./scripts/firestore";
 import HomeScreen from "./pages/HomeScreen";
 import FormAddMovie from "./components/FormAddMovie";
+import FormAddSerie from "./components/FormAddSerie";
+
 export default function App() {
   const [shows, setShows] = useState([]);
   const [status, setStatus] = useState(0);
@@ -25,6 +27,7 @@ export default function App() {
       <h1>Netflix</h1>
       <HomeScreen shows={shows} />
       <FormAddMovie />
+      <FormAddSerie/>
     </div>
   );
 }
