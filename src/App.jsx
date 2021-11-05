@@ -1,13 +1,11 @@
 import { useState, useCallback, useEffect } from "react";
 import { getCollection } from "./scripts/firestore";
-import HomeScreen from "./pages/HomeScreen";
-import FormAddMovie from "./components/FormAddMovie";
-import FormAddSerie from "./components/FormAddSerie";
-import AdminPage from "./pages/AdminPage";
+import Browser from "./components/Browser";
 
 export default function App() {
   const [shows, setShows] = useState([]);
   const [status, setStatus] = useState(0);
+  const [isLogged, setIsLogged] = useState(true)
 
   const fetchShows = useCallback(async (path) => {
     try {
@@ -25,11 +23,9 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Netflix</h1>
-      {/* <HomeScreen shows={shows} /> */}
-      <AdminPage shows={shows}/>
-      <FormAddMovie />
-      <FormAddSerie/>
+      {status === 0 && <p>loading...</p>}
+      {status === 1 && <Browser shows={shows} isLogged={isLogged} />}
+      {status === 2 && <p>Error...</p>}
     </div>
   );
 }

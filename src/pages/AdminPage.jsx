@@ -1,3 +1,4 @@
+import FormAddSerie from "../components/FormAddSerie";
 import ShowCard from "../components/ShowCard"
 
 export default function AdminPage({shows}) {
@@ -13,6 +14,7 @@ export default function AdminPage({shows}) {
   const Documentaries = shows
     .filter((documentary) => documentary.category === "documentaries")
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
+
     return (
         <div>
             <h1>admin page</h1>
@@ -22,6 +24,7 @@ export default function AdminPage({shows}) {
             {Series}
             <h2>Documentaries</h2>
             {Documentaries}
+            <FormAddSerie/>
         </div>
     )
 }

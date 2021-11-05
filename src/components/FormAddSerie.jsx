@@ -16,6 +16,7 @@ export default function FormAddSerie() {
     const newRelease = {
         category:'series',
       ...values,
+      seasons: []
     };
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
