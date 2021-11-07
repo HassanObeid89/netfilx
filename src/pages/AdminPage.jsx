@@ -1,8 +1,9 @@
-import ShowCard from "../components/ShowCard"
+import { Link } from "react-router-dom";
+import FormAddSerie from "../components/FormAddSerie";
+import ShowCard from "../components/ShowCard";
 
-export default function AdminPage({shows}) {
-
-    const Movies = shows
+export default function AdminPage({ shows }) {
+  const Movies = shows
     .filter((movie) => movie.category === "movies")
     .map((movie, index) => <ShowCard key={index} data={movie} />);
 
@@ -13,15 +14,17 @@ export default function AdminPage({shows}) {
   const Documentaries = shows
     .filter((documentary) => documentary.category === "documentaries")
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
-    return (
-        <div>
-            <h1>admin page</h1>
-            <h2>Movies</h2>
-            {Movies}
-            <h2>Series</h2>
-            {Series}
-            <h2>Documentaries</h2>
-            {Documentaries}
-        </div>
-    )
+
+  return (
+    <div>
+      <h1>admin page</h1>
+      <h2>Movies & Documentaries</h2>
+      {Movies}
+      {Documentaries}
+      <Link to="/add-movie">Add Movie & Documentary</Link>
+      <h2>Series</h2>
+      {Series}
+      <Link to="/add-serie">Add Serie</Link>
+    </div>
+  );
 }
