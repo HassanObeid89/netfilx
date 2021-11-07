@@ -1,29 +1,34 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { updateDocument } from "../scripts/firestore";
-import SeasonList from './SeasonList'
+import SeasonList from "./SeasonList";
 export default function FormAddSeason({ data }) {
-  const {id} = useParams()
+  const { id } = useParams();
+  const history = useHistory();
   const [season, setSeason] = useState([]);
 
-  const serie = data.find((serie)=>serie.id === id)
-   
-  const Seasons = data.map((serie)=><SeasonList key={serie.id} seasons={serie.seasons}/>)
+  const serie = data.find((serie) => serie.id === id);
+
+  const Seasons = data
+    .filter((serie) => serie.id === id)
+    .map((serie) => (
+      <SeasonList key={serie.id} serie={serie} seasons={serie.seasons} />
+    ));
 
   async function onUpdate(event) {
     event.preventDefault();
     const updatedSerie = {
       ...serie,
-      // seasons: {[season] :[]}
-      seasons: [...serie.seasons,{name:season,episodes:[{}]}]
+      seasons: { ...serie.seasons, [season]: [] },
     };
     await updateDocument("shows", updatedSerie, serie.id);
     updatedSerie.id = serie.id;
     // dispatchCourses({ type: "UPDATE_COURSE", payload: updatedCourse });
     alert("Serie updated");
     setSeason([]);
+    history.pushState("/");
   }
-// const seasons = data.map(())
+
   return (
     <fieldset>
       <label>
@@ -36,7 +41,7 @@ export default function FormAddSeason({ data }) {
         />
       </label>
       <button onClick={(event) => onUpdate(event)}>Add Season</button>
-      {data.seasons !==null && Seasons}
+      {data.seasons !== null && Seasons}
     </fieldset>
   );
 }
