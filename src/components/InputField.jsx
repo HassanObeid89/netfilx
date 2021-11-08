@@ -4,14 +4,15 @@ export default function InputField({ options, onChange }) {
   const inputReference = useRef(null);
   return (
     <fieldset>
-      <label>
-        <span>{label}</span>
+      
         <input
           type={type}
           ref={inputReference}
           placeholder={placeholder}
           onChange={() => onChange(key, inputReference.current.value)}
         />
+      <label>
+        <span>{label}</span>
       </label>
     </fieldset>
   );

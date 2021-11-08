@@ -46,7 +46,7 @@ export default function FormAddSerie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button type="submit">Submit</button>
+      <button className='primary-button' type="submit">Submit</button>
     </form>
   );
 }
