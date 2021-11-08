@@ -12,12 +12,6 @@
     "type": "text"
   },
   {
-    "key": "imgUrl",
-    "label": "ImgUrl",
-    "placeholder": "https://upload.wikimedia.org/wikipedia/en/thumb/4/43/ArmyOfThievesTeaserPoster.jpg/220px-ArmyOfThievesTeaserPoster.jpg",
-    "type": "text"
-  },
-  {
     "key": "videoLink",
     "label": "Video Id",
     "placeholder": "StuFfLouaNw",

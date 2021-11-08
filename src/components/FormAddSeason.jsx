@@ -31,16 +31,17 @@ export default function FormAddSeason({ data }) {
 
   return (
     <fieldset>
-      <label>
-        <span>Season</span>
+      
         <input
           type="text"
           placeholder="season 1"
           value={season}
           onChange={(event) => setSeason(event.target.value)}
         />
+        <label>
+        <span>Season One</span>
       </label>
-      <button onClick={(event) => onUpdate(event)}>Add Season</button>
+      <button className='primary-button' onClick={(event) => onUpdate(event)}>Add Season</button>
       {data.seasons !== null && Seasons}
     </fieldset>
   );

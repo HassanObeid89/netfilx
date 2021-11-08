@@ -39,8 +39,9 @@ export default function FormAddEpisode({ data }) {
   ));
   return (
     <form onSubmit={onUpdate}>
+      <h1>Add Episode</h1>
       {InputFields}
-      <button>Add Episode</button>
+      <button className='primary-button'>Add Episode</button>
     </form>
   );
 }

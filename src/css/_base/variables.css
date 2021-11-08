@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --color-pink: #eb4868;
+  --color-pink-light: #fdecec;
+  --color-gray-dark: #dbdbdb;
+  --color-gray-light: #fafafa;
+
+  /* Fonts */
+  --font-family: "Poppins";
+  --font-title-mobile: 18px;
+  --font-title-desktop: 25px;
+
+  --font-text-mobile: 12px;
+  --font-text-desktop: 16px;
+
+  --font-button-mobile: 14px;
+  --font-button-desktop: 18px;
+
+  /* Spacing */
+  --space-big: 24px;
+  --space-medium: 16px;
+  --space-small: 8px;
+}

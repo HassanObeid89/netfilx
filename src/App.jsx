@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { getCollection } from "./scripts/firestore";
 import Browser from "./components/Browser";
+import "./css/style.css";
 
 export default function App() {
   const [shows, setShows] = useState([]);

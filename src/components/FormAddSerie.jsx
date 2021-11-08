@@ -3,6 +3,7 @@ import InputField from "./InputField";
 import fieldsAddSerie from "../data/fields-addSerie.json";
 import { createDocument } from "../scripts/firestore";
 import { useHistory } from "react-router-dom";
+import InputImage from './InputImage'
 
 export default function FormAddSerie() {
   const [values, setValues] = useState({});
@@ -33,6 +34,7 @@ export default function FormAddSerie() {
   return (
     <form onSubmit={onCreate}>
       <h1>Add Serie</h1>
+      <InputImage onChange={onChange} imgUrl={values.imgUrl}/>
       {InputFields}
       <select
         defaultValue="Choose Maturity Rating"
@@ -44,7 +46,7 @@ export default function FormAddSerie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button type="submit">Submit</button>
+      <button className='primary-button' type="submit">Submit</button>
     </form>
   );
 }

@@ -3,10 +3,12 @@ import { useHistory } from "react-router-dom";
 import { createDocument } from "../scripts/firestore";
 import fieldsAddMovie from "../data/fields-addMovie.json";
 import InputField from "./InputField";
+import InputImage from "./InputImage";
 
 export default function FormAddMovie() {
   const [values, setValues] = useState({});
   const history = useHistory();
+
   function onChange(key, value) {
     const fields = { [key]: value };
     setValues({ ...values, ...fields });
@@ -31,6 +33,7 @@ export default function FormAddMovie() {
   return (
     <form onSubmit={onCreate}>
       <h1>Add Movie Or Documentary</h1>
+      <InputImage onChange={onChange} imgUrl={values.imgUrl} />
       <select
         defaultValue="Choose Category"
         required
@@ -51,7 +54,7 @@ export default function FormAddMovie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button type="submit">Submit</button>
+      <button className='primary-button' type="submit">Submit</button>
     </form>
   );
 }
