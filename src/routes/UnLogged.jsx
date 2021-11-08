@@ -8,7 +8,7 @@ export default function UnLogged({setIsLogged}) {
   return (
     <>
       <Route exact path="/" ><SignIn setIsLogged={setIsLogged}/></Route>
-      <Route path='/sign-up'><SignUp/></Route>
+      <Route path='/sign-up'><SignUp setIsLogged={setIsLogged}/></Route>
     </>
   );
 }
