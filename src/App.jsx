@@ -6,7 +6,7 @@ import "./css/style.css";
 export default function App() {
   const [shows, setShows] = useState([]);
   const [status, setStatus] = useState(0);
-  const [isLogged, setIsLogged] = useState(true)
+  const [isLogged, setIsLogged] = useState(false)
 
   const fetchShows = useCallback(async (path) => {
     try {
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className="App">
       {status === 0 && <p>loading...</p>}
-      {status === 1 && <Browser shows={shows} isLogged={isLogged} />}
+      {status === 1 && <Browser shows={shows} isLogged={isLogged} setIsLogged={setIsLogged} />}
       {status === 2 && <p>Error...</p>}
     </div>
   );

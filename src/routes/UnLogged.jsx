@@ -4,10 +4,10 @@ import { Route } from "react-router-dom";
 //Project files
 import SignIn from "../pages/SignIn";
 
-export default function UnLogged() {
+export default function UnLogged({setIsLogged}) {
   return (
     <>
-      <Route component={SignIn} exact path="/sign-in" />
+      <Route exact path="/" ><SignIn setIsLogged={setIsLogged}/></Route>
     </>
   );
 }
