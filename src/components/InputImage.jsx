@@ -14,8 +14,9 @@ export default function InputImage({ onChange, imgUrl }) {
 
   return (
     <fieldset className="input-image">
+      <span>Choose Image</span>
       <label className="image-chooser">
-        <span>Choose Image</span>
+        
         <input onChange={(event) => onImageChange(event)} type="file" />
         <img src={image} alt="" />
       </label>
