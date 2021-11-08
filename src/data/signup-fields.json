@@ -1,0 +1,26 @@
+[
+  {
+    "key": "name",
+    "label": "Name",
+    "placeholder": "Hassan Obeid",
+    "type": "text"
+  },
+  {
+    "key": "city",
+    "label": "City",
+    "placeholder": "Stockholm",
+    "type": "text"
+  },
+  {
+    "key": "email",
+    "label": "Email",
+    "placeholder": "hassan.obeid@example.com",
+    "type": "email"
+  },
+  {
+    "key": "password",
+    "label": "Password",
+    "placeholder": "********",
+    "type": "password"
+  }
+]
