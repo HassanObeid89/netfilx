@@ -2,24 +2,24 @@
 import { createContext, useContext, useReducer } from "react";
 
 //Project files
-import courseReducer from "./showReducer";
+import showReducer from "./showReducer";
 
 // Properties
 const UserContext = createContext(null);
 
-export function CoursesProvider({ children }) {
+export function ShowsProvider({ children }) {
   // Local state
-  const [courses, dispatchCourses] = useReducer(courseReducer, {});
+  const [shows, dispatchShows] = useReducer(showReducer, {});
 
   return (
     <UserContext.Provider
-      value={{ courses: courses, dispatchCourses: dispatchCourses }}
+      value={{ shows: shows, dispatchShows: dispatchShows }}
     >
       {children}
     </UserContext.Provider>
   );
 }
 
-export function useCourse() {
+export function useShow() {
   return useContext(UserContext);
 }
