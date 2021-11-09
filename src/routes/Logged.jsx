@@ -41,7 +41,7 @@ export default function Logged({ isLogged }) {
       <Route path="/add-season/:id" component={FormAddSeason} />
       <Route path="/add-serie" component={FormAddSerie} />
       <Route path="/add-movie" component={FormAddMovies} />
-      <Route path="/home-page" component={HomeScreen} />
+      {status === 1 && <Route path="/home-page" component={HomeScreen} />}
     </>
   );
 }
