@@ -34,16 +34,14 @@ export default function SignIn() {
     dispatchUser({ type: "SET_USER", payload: document });
     setIsLogged(true);
     location.push("/");
-    console.log(document)
-
   }
 
   function onFailure(message) {
     setErrorMessage(message);
   }
 
-  const inputFields = signinFields.map((input) => (
-    <InputField options={input} onChange={onChange} values={values}/>
+  const inputFields = signinFields.map((input,index) => (
+    <InputField key={index} options={input} onChange={onChange} values={values}/>
   ));
   return (
     <form onSubmit={onSubmit}>

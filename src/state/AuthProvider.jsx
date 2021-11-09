@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
   // Local state
   const [isLogged, setIsLogged] = useState(false);
   const [uid, dispatchUid] = useReducer(authReducer, "");
-console.log(isLogged)
+
   // Methods
   useEffect(() => {
     onAuthStateChanged(authInstance, (user) => {
@@ -27,7 +27,7 @@ console.log(isLogged)
       else dispatchUid({ type: "SET_UID", payload: "no user" });
     });
   }, []);
-console.log(uid)
+
   return (
     <AuthContext.Provider value={{ uid, dispatchUid, isLogged, setIsLogged }}>
       {children}
