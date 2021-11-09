@@ -4,12 +4,15 @@ import { getDocument } from "../scripts/firestore";
 import { signIn } from "../scripts/authentication";
 import signinFields from "../data/signin-fields.json";
 import InputField from "../components/InputField";
-
-export default function SignIn({setIsLogged}) {
+import { useUser } from "../state/UserProvider";
+import { useAuth } from "../state/AuthProvider";
+export default function SignIn() {
 
   const location = useHistory();
   const [values, setValues] = useState({})
   const [errorMessage, setErrorMessage] = useState("");
+  const { dispatchUser } = useUser();
+  const { setIsLogged } = useAuth();
 
   //Methods
   function onChange(key, value) {
@@ -28,9 +31,11 @@ export default function SignIn({setIsLogged}) {
   async function onSuccess(uid) {
     const document = await getDocument("users", uid);
 
-    // dispatchUser({ type: "SET_USER", payload: document });
+    dispatchUser({ type: "SET_USER", payload: document });
     setIsLogged(true);
     location.push("/");
+    console.log(document)
+
   }
 
   function onFailure(message) {
@@ -44,6 +49,7 @@ export default function SignIn({setIsLogged}) {
     <form onSubmit={onSubmit}>
       <h1>sign in</h1>
       {inputFields}
+      {errorMessage}
       <button className="primary-button">Sign In</button>
     </form>
   );

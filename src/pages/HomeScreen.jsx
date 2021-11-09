@@ -1,6 +1,7 @@
 import Row from "../components/Row";
 
 export default function HomeScreen({ shows }) {
+  console.log(shows)
   const Movies = shows
     .filter((movie) => movie.category === "movies")
     .map((movie, index) => <Row key={index} data={movie} />);

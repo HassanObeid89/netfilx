@@ -6,7 +6,7 @@ import FormAddMovies from "../components/FormAddMovie";
 //Project files
 import AdminPage from "../pages/AdminPage";
 import FormAddSerie from "../components/FormAddSerie";
-
+import HomeScreen from '../pages/HomeScreen'
 export default function Logged({ shows }) {
   const serie = shows.filter((serie) => serie.category === "series");
 
@@ -27,6 +27,7 @@ export default function Logged({ shows }) {
       <Route path="/add-movie">
         <FormAddMovies />
       </Route>
+      <Route path='/home-page'><HomeScreen shows={shows}/></Route>
     </>
   );
 }

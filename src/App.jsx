@@ -1,12 +1,17 @@
 import { useState, useCallback, useEffect } from "react";
-import { getCollection } from "./scripts/firestore";
+import { getCollection,getDocument } from "./scripts/firestore";
+import { useAuth } from "./state/AuthProvider";
+import { useUser } from "./state/UserProvider";
 import Browser from "./components/Browser";
 import "./css/style.css";
 
 export default function App() {
+  // Global state
+  const { uid, setIsLogged, isLogged } = useAuth();
+  const { dispatchUser } = useUser();
   const [shows, setShows] = useState([]);
   const [status, setStatus] = useState(0);
-  const [isLogged, setIsLogged] = useState(false)
+ 
 
   const fetchShows = useCallback(async (path) => {
     try {
@@ -18,9 +23,23 @@ export default function App() {
       setStatus(2);
     }
   }, []);
+
+  const fetchUser = useCallback(
+    async (path, uid) => {
+      if (uid === "no user") {
+        setStatus(1);
+      } else if (uid !== "") {
+        const user = await getDocument(path, uid);
+        dispatchUser({ type: "SET_USER", payload: user });
+        setIsLogged(true);
+      }
+    },
+    [dispatchUser, setIsLogged]
+  );
   useEffect(() => {
     fetchShows("shows");
-  }, [fetchShows]);
+    fetchUser('users',uid)
+  }, [fetchShows,uid,fetchUser]);
 
   return (
     <div className="App">
