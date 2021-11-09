@@ -10,6 +10,9 @@ span {
 * {
   box-sizing: border-box;
 }
+ol{
+  margin-bottom: 30px;
+}
 
 /* ul,
 li {

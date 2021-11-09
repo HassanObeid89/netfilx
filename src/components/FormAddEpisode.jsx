@@ -2,14 +2,16 @@ import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import fieldsAddEpisode from "../data/fields-addEpisode";
 import { updateDocument } from "../scripts/firestore";
+import { useShow } from "../state/ShowsProvider";
 import InputField from "./InputField";
 
-export default function FormAddEpisode({ data }) {
+export default function FormAddEpisode() {
   const { id } = useParams();
   const history = useHistory();
+  const {shows, dispatchShows} = useShow()
   const { season } = useParams();
   const [values, setValues] = useState({});
-  const serie = data.find((serie) => serie.id === id);
+  const serie = shows.find((serie) => serie.id === id);
   const keys = Object.keys(serie.seasons);
 
   function onChange(key, value) {
@@ -29,9 +31,10 @@ export default function FormAddEpisode({ data }) {
     };
     await updateDocument("shows", newEpisode, serie.id);
     newEpisode.id = serie.id;
-    // dispatchCourses({ type: "UPDATE_COURSE", payload: updatedCourse });
+    dispatchShows({ type: "UPDATE_SHOW", payload: newEpisode });
     event.target.reset();
-    history.push("/");
+    setValues({})
+    history.goBack()
   }
 
   const InputFields = fieldsAddEpisode.map((input, index) => (

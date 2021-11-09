@@ -28,6 +28,7 @@ export default function FormAddSerie() {
     alert("Serie added");
     event.target.reset();
     history.push("/");
+    setValues({})
   }
 
   const InputFields = fieldsAddSerie.map((input, index) => (

@@ -27,7 +27,7 @@ export default function AdminPage() {
   const Documentaries = shows
     .filter((documentary) => documentary.category === "documentaries")
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
-
+   
   return (
     <div>
       <h1>admin page</h1>
