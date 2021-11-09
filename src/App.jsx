@@ -18,7 +18,7 @@ export default function App() {
       } else if (uid !== "") {
         const user = await getDocument(path, uid);
         dispatchUser({ type: "SET_USER", payload: user });
-        setStatus(1)
+        setStatus(1);
         setIsLogged(true);
       }
     },

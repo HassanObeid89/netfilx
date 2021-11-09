@@ -1,6 +1,6 @@
 export default function showReducer(state, action) {
   switch (action.type) {
-    case "ADD_COURSE":
+    case "ADD_SHOW":
       return addShow(state, action);
     case "SET_SHOWS":
       return setShows(state, action);

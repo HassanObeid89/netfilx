@@ -4,11 +4,12 @@ import { createDocument } from "../scripts/firestore";
 import fieldsAddMovie from "../data/fields-addMovie.json";
 import InputField from "./InputField";
 import InputImage from "./InputImage";
+import {useShow} from '../state/ShowsProvider';
 
 export default function FormAddMovie() {
   const [values, setValues] = useState({});
   const history = useHistory();
-
+const {dispatchShows}=useShow()
   function onChange(key, value) {
     const fields = { [key]: value };
     setValues({ ...values, ...fields });
@@ -21,7 +22,8 @@ export default function FormAddMovie() {
     };
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
-    alert("sucess");
+    alert("Movie / Documentary Added!!");
+    dispatchShows({type:"ADD_SHOW",payload:newRelease})
     event.target.reset();
     history.push("/");
   }

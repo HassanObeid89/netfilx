@@ -1,13 +1,11 @@
-import { Link,useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ShowCard from "../components/ShowCard";
 import { useShow } from "../state/ShowsProvider";
 import { logout } from "../scripts/authentication";
 import { useAuth } from "../state/AuthProvider";
 
 export default function AdminPage() {
-  const {shows} = useShow()
- 
-
+  const { shows } = useShow();
   const { setIsLogged } = useAuth();
   const location = useHistory();
 
@@ -17,10 +15,11 @@ export default function AdminPage() {
     setIsLogged(false);
     location.push("/");
   }
+
   const Movies = shows
     .filter((movie) => movie.category === "movies")
     .map((movie, index) => <ShowCard key={index} data={movie} />);
-console.log(Movies)
+
   const Series = shows
     .filter((serie) => serie.category === "series")
     .map((serie, index) => <ShowCard key={index} data={serie} />);
@@ -33,13 +32,23 @@ console.log(Movies)
     <div>
       <h1>admin page</h1>
       <h2>Movies & Documentaries</h2>
-      {Movies.length > 0 || Documentaries.length > 0 ? <ul>{Movies}
-      {Documentaries}</ul>:<p>No Movies or Documentaries yet!</p>}
-      <Link className='primary-button' to="/add-movie">Add Movie & Documentary</Link>
-      {/* <h2>Series</h2>
-      <ul>{Series.length > 0 ? Series:<p>No Series yet!</p>}</ul>
-      <Link className='primary-button' to="/add-serie">Add Serie</Link> */}
-<button onClick={onLogout}>Sign Out</button>
+      {Movies.length > 0 || Documentaries.length > 0 ? (
+        <ul>
+          {Movies}
+          {Documentaries}
+        </ul>
+      ) : (
+        <p>No Movies or Documentaries yet!</p>
+      )}
+      <Link className="primary-button" to="/add-movie">
+        Add Movie & Documentary
+      </Link>
+      <h2>Series</h2>
+      <ul>{Series.length > 0 ? Series : <p>No Series yet!</p>}</ul>
+      <Link className="primary-button" to="/add-serie">
+        Add Serie
+      </Link>
+      <button onClick={onLogout}>Sign Out</button>
     </div>
   );
 }
