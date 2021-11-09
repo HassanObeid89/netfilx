@@ -10,7 +10,7 @@ export default function App() {
   const { uid, setIsLogged, isLogged } = useAuth();
   const { dispatchUser } = useUser();
   const [status, setStatus] = useState(0);
-  console.log(isLogged);
+
   const fetchUser = useCallback(
     async (path, uid) => {
       if (uid === "no user") {
@@ -29,9 +29,7 @@ export default function App() {
   return (
     <div className="App">
       {status === 0 && <p>loading...</p>}
-      {status === 1 && (
-        <Browser isLogged={isLogged} setIsLogged={setIsLogged} />
-      )}
+      {status === 1 && <Browser />}
       {status === 2 && <p>Error...</p>}
     </div>
   );
