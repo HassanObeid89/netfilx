@@ -1,15 +1,23 @@
+//Npm packge
 import { useState } from "react";
+
+//Project files
 import InputField from "./InputField";
 import fieldsAddSerie from "../data/fields-addSerie.json";
 import { createDocument } from "../scripts/firestore";
 import { useHistory } from "react-router-dom";
-import InputImage from './InputImage'
-import {useShow} from '../state/ShowsProvider';
+import InputImage from "./InputImage";
+import { useShow } from "../state/ShowsProvider";
 
 export default function FormAddSerie() {
+  //Global state
+  const { dispatchShows } = useShow();
+
+  //Local state
   const [values, setValues] = useState({});
   const history = useHistory();
-  const {dispatchShows}=useShow()
+
+  //Methods
   function onChange(key, value) {
     const fields = { [key]: value };
     setValues({ ...values, ...fields });
@@ -24,11 +32,11 @@ export default function FormAddSerie() {
     };
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
-    dispatchShows({type:"ADD_SHOW",payload:newRelease})
+    dispatchShows({ type: "ADD_SHOW", payload: newRelease });
     alert("Serie added");
     event.target.reset();
     history.push("/");
-    setValues({})
+    setValues({});
   }
 
   const InputFields = fieldsAddSerie.map((input, index) => (
@@ -38,7 +46,7 @@ export default function FormAddSerie() {
   return (
     <form onSubmit={onCreate}>
       <h1>Add Serie</h1>
-      <InputImage onChange={onChange} imgUrl={values.imgUrl}/>
+      <InputImage onChange={onChange} imgUrl={values.imgUrl} />
       {InputFields}
       <select
         defaultValue="Choose Maturity Rating"
@@ -50,7 +58,9 @@ export default function FormAddSerie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button className='primary-button' type="submit">Submit</button>
+      <button className="primary-button" type="submit">
+        Submit
+      </button>
     </form>
   );
 }

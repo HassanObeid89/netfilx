@@ -3,12 +3,13 @@ import { Route } from "react-router-dom";
 
 //Project files
 import SignIn from "../pages/SignIn";
-import SignUp from '../pages/SignUp'
-export default function UnLogged({setIsLogged}) {
+import SignUp from "../pages/SignUp";
+
+export default function UnLogged() {
   return (
     <>
-      <Route exact path="/" ><SignIn /></Route>
-      <Route path='/sign-up'><SignUp setIsLogged={setIsLogged}/></Route>
+      <Route exact path="/" component={SignIn} />
+      <Route path="/sign-up" component={SignUp} />
     </>
   );
 }

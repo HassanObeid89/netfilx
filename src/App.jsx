@@ -1,4 +1,7 @@
+//Npm package
 import { useState, useCallback, useEffect } from "react";
+
+//Project files
 import { getDocument } from "./scripts/firestore";
 import { useAuth } from "./state/AuthProvider";
 import { useUser } from "./state/UserProvider";
@@ -9,8 +12,11 @@ export default function App() {
   // Global state
   const { uid, setIsLogged, isLogged } = useAuth();
   const { dispatchUser } = useUser();
+
+  //Local state
   const [status, setStatus] = useState(0);
 
+  //Methods
   const fetchUser = useCallback(
     async (path, uid) => {
       if (uid === "no user") {
@@ -29,9 +35,7 @@ export default function App() {
   return (
     <div className="App">
       {status === 0 && <p>loading...</p>}
-      {status === 1 && (
-        <Browser isLogged={isLogged} setIsLogged={setIsLogged} />
-      )}
+      {status === 1 && <Browser />}
       {status === 2 && <p>Error...</p>}
     </div>
   );
