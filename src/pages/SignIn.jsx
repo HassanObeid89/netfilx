@@ -1,18 +1,24 @@
+//Npm package
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+//Project files
 import { getDocument } from "../scripts/firestore";
 import { signIn } from "../scripts/authentication";
 import signinFields from "../data/signin-fields.json";
 import InputField from "../components/InputField";
 import { useUser } from "../state/UserProvider";
 import { useAuth } from "../state/AuthProvider";
-export default function SignIn() {
 
-  const location = useHistory();
-  const [values, setValues] = useState({})
-  const [errorMessage, setErrorMessage] = useState("");
+export default function SignIn() {
+  //Global state
   const { dispatchUser } = useUser();
   const { setIsLogged } = useAuth();
+
+  //Local State
+  const [values, setValues] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+  const location = useHistory();
 
   //Methods
   function onChange(key, value) {
@@ -40,8 +46,13 @@ export default function SignIn() {
     setErrorMessage(message);
   }
 
-  const inputFields = signinFields.map((input,index) => (
-    <InputField key={index} options={input} onChange={onChange} values={values}/>
+  const inputFields = signinFields.map((input, index) => (
+    <InputField
+      key={index}
+      options={input}
+      onChange={onChange}
+      values={values}
+    />
   ));
   return (
     <form onSubmit={onSubmit}>

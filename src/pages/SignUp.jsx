@@ -1,5 +1,8 @@
+//Npm package
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+//Project files
 import signupFields from "../data/signup-fields";
 import InputField from "../components/InputField";
 import { createAccount } from "../scripts/authentication";
@@ -11,7 +14,7 @@ export default function SignUp() {
   //Global state
   const { setIsLogged } = useAuth();
   const { dispatchUser } = useUser();
-  
+
   //Local State
   const [values, setValues] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
@@ -42,9 +45,11 @@ export default function SignUp() {
   function onFailure(message) {
     setErrorMessage(message);
   }
+  //Properties
   const inputFields = signupFields.map((input) => (
     <InputField options={input} onChange={onChange} values={values} />
   ));
+
   return (
     <form onSubmit={onSubmit}>
       <h1>sign up</h1>

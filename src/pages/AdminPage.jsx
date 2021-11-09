@@ -1,14 +1,20 @@
+//Npm packge
 import { Link, useHistory } from "react-router-dom";
+
+//Project files
 import ShowCard from "../components/ShowCard";
 import { useShow } from "../state/ShowsProvider";
 import { logout } from "../scripts/authentication";
 import { useAuth } from "../state/AuthProvider";
 
 export default function AdminPage() {
+  //Global state
   const { shows } = useShow();
   const { setIsLogged } = useAuth();
+  //Properties
   const location = useHistory();
 
+  //Methods
   async function onLogout() {
     await logout();
 
@@ -27,7 +33,7 @@ export default function AdminPage() {
   const Documentaries = shows
     .filter((documentary) => documentary.category === "documentaries")
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
-   
+
   return (
     <div>
       <h1>admin page</h1>

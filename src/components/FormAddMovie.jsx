@@ -1,15 +1,23 @@
+//Npm package
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+//Project files
 import { createDocument } from "../scripts/firestore";
 import fieldsAddMovie from "../data/fields-addMovie.json";
 import InputField from "./InputField";
 import InputImage from "./InputImage";
-import {useShow} from '../state/ShowsProvider';
+import { useShow } from "../state/ShowsProvider";
 
 export default function FormAddMovie() {
+  //Global state
+  const { dispatchShows } = useShow();
+
+  //Local state
   const [values, setValues] = useState({});
   const history = useHistory();
-const {dispatchShows}=useShow()
+
+  //Methods
   function onChange(key, value) {
     const fields = { [key]: value };
     setValues({ ...values, ...fields });
@@ -23,7 +31,7 @@ const {dispatchShows}=useShow()
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
     alert("Movie / Documentary Added!!");
-    dispatchShows({type:"ADD_SHOW",payload:newRelease})
+    dispatchShows({ type: "ADD_SHOW", payload: newRelease });
     event.target.reset();
     history.push("/");
   }
@@ -56,7 +64,9 @@ const {dispatchShows}=useShow()
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button className='primary-button' type="submit">Submit</button>
+      <button className="primary-button" type="submit">
+        Submit
+      </button>
     </form>
   );
 }
