@@ -10,7 +10,7 @@ export default function App() {
   const { uid, setIsLogged, isLogged } = useAuth();
   const { dispatchUser } = useUser();
   const [status, setStatus] = useState(0);
-
+  console.log(isLogged);
   const fetchUser = useCallback(
     async (path, uid) => {
       if (uid === "no user") {
