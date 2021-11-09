@@ -4,10 +4,12 @@ import fieldsAddSerie from "../data/fields-addSerie.json";
 import { createDocument } from "../scripts/firestore";
 import { useHistory } from "react-router-dom";
 import InputImage from './InputImage'
+import {useShow} from '../state/ShowsProvider';
 
 export default function FormAddSerie() {
   const [values, setValues] = useState({});
   const history = useHistory();
+  const {dispatchShows}=useShow()
   function onChange(key, value) {
     const fields = { [key]: value };
     setValues({ ...values, ...fields });
@@ -22,9 +24,11 @@ export default function FormAddSerie() {
     };
     const id = await createDocument("shows", newRelease);
     newRelease.id = id;
+    dispatchShows({type:"ADD_SHOW",payload:newRelease})
     alert("Serie added");
     event.target.reset();
     history.push("/");
+    setValues({})
   }
 
   const InputFields = fieldsAddSerie.map((input, index) => (

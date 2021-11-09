@@ -7,7 +7,7 @@ import SignUp from '../pages/SignUp'
 export default function UnLogged({setIsLogged}) {
   return (
     <>
-      <Route exact path="/" ><SignIn setIsLogged={setIsLogged}/></Route>
+      <Route exact path="/" ><SignIn /></Route>
       <Route path='/sign-up'><SignUp setIsLogged={setIsLogged}/></Route>
     </>
   );
