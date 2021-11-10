@@ -15,7 +15,7 @@ export default function FormAddSerie() {
   const { values, setValues, onChange } = useForm();
 
   const history = useHistory();
-  
+
   //Methods
   async function onCreate(event) {
     event.preventDefault();
@@ -32,10 +32,9 @@ export default function FormAddSerie() {
     history.push("/");
     setValues({});
   }
-  console.log(values);
+
   const InputFields = fieldsAddSerie.map((input, index) => (
     <InputField
-      values={values}
       key={index}
       options={input}
       onChange={onChange}
