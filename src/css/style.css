@@ -1,5 +1,8 @@
-@import './components/inputImage.css';
-@import './components/inputField.css';
-@import "./_base/layout.css";
+@import './fonts.css';
 @import "./_base/typography.css";
 @import "./_base/variables.css";
+@import "./_base/layout.css";
+
+@import './components/inputImage.css';
+@import './components/inputField.css';
+@import './components/home.css';

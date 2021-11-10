@@ -16,14 +16,13 @@ export default function HomeScreen() {
     .map((documentary, index) => <Row key={index} data={documentary} />);
 
   return (
-    <div>
-      <h1>Home screen</h1>
+    <div className='row'>
       <h2>Series</h2>
-      {Series}
+      <ul>{Series}</ul>
       <h2>Movies</h2>
-      {Movies}
+      <ul>{Movies}</ul>
       <h2>Documentaries</h2>
-      {Documentaries}
+      <ul>{Documentaries}</ul>
     </div>
   );
 }

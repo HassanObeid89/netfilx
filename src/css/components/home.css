@@ -1,0 +1,43 @@
+.row {
+  color: white;
+  padding: 0 57.594px;
+}
+
+.row h2{
+    margin-bottom: 10px;
+}
+
+.row-posters{
+    width: 216.797px;
+    height: 122.062px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.row-posters img {
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    object-fit: contain;
+}
+.row-posters:hover {
+    transform: scale(1.09);
+    opacity: 1;
+    z-index: 2;
+}
+
+
+ul {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;  
+  margin: 0 0 43.2px 0;
+}
+
+ul::-webkit-scrollbar{
+    display: none;
+}
+
+
