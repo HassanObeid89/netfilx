@@ -9,10 +9,7 @@ import FormAddSeason from "../components/FormAddSeason";
 import FormAddEpisode from "../components/FormAddEpisode";
 import FormAddMovies from "../components/FormAddMovie";
 
-
 export default function Logged() {
-
-
   return (
     <>
       <Route path="/" exact component={AdminPage} />

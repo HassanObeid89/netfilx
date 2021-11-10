@@ -10,7 +10,7 @@ import "./css/style.css";
 
 export default function App() {
   // Global state
-  const { uid, setIsLogged, isLogged } = useAuth();
+  const { uid, setIsLogged } = useAuth();
   const { dispatchUser } = useUser();
 
   //Local state

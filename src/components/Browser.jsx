@@ -39,9 +39,11 @@ export default function Browser() {
   return (
     <BrowserRouter>
       <Switch>
-        {status===0 && <p>Loading...</p>}
-        {isLogged && status === 1 ? <Logged /> : <UnLogged />}
-        
+        <>
+          {status === 0 && <p>Loading...</p>}
+          {isLogged && status === 1 ? <Logged /> : <UnLogged />}
+          {status === 2 && <p>Error</p>}
+        </>
       </Switch>
     </BrowserRouter>
   );

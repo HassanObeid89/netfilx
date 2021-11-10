@@ -1,5 +1,4 @@
 //Npm packge
-import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 //Project file
