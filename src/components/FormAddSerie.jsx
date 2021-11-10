@@ -1,6 +1,3 @@
-//Npm packge
-import { useState } from "react";
-
 //Project files
 import InputField from "./InputField";
 import fieldsAddSerie from "../data/fields-addSerie.json";
@@ -8,21 +5,18 @@ import { createDocument } from "../scripts/firestore";
 import { useHistory } from "react-router-dom";
 import InputImage from "./InputImage";
 import { useShow } from "../state/ShowsProvider";
+import useForm from "../utils/useForm";
 
 export default function FormAddSerie() {
   //Global state
   const { dispatchShows } = useShow();
 
-  //Local state
-  const [values, setValues] = useState({});
+  //Custom hook
+  const { values, setValues, onChange } = useForm();
+
   const history = useHistory();
-
+  
   //Methods
-  function onChange(key, value) {
-    const fields = { [key]: value };
-    setValues({ ...values, ...fields });
-  }
-
   async function onCreate(event) {
     event.preventDefault();
     const newRelease = {
@@ -38,9 +32,14 @@ export default function FormAddSerie() {
     history.push("/");
     setValues({});
   }
-
+  console.log(values);
   const InputFields = fieldsAddSerie.map((input, index) => (
-    <InputField key={index} options={input} onChange={onChange} />
+    <InputField
+      values={values}
+      key={index}
+      options={input}
+      onChange={onChange}
+    />
   ));
 
   return (

@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-export default function useForm() {
-  const [state, setstate] = useState({});
+export default function useForm(){
+  const [values, setValues] = useState({});
+
   function onChange(key, value) {
     const fields = { [key]: value };
-    setstate(...state, ...fields);
+    setValues(values=>({...values, ...fields}));
   }
-  return [state, onChange, setstate];
+  return {values, onChange, setValues};
 }
