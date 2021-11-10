@@ -1,5 +1,4 @@
 //Npm package
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 //Project files
@@ -8,21 +7,18 @@ import fieldsAddMovie from "../data/fields-addMovie.json";
 import InputField from "./InputField";
 import InputImage from "./InputImage";
 import { useShow } from "../state/ShowsProvider";
+import useForm from "../utils/useForm";
 
 export default function FormAddMovie() {
   //Global state
   const { dispatchShows } = useShow();
 
-  //Local state
-  const [values, setValues] = useState({});
+  //Custom hook
+  const {values, setValues,onChange} = useForm();
+
   const history = useHistory();
 
   //Methods
-  function onChange(key, value) {
-    const fields = { [key]: value };
-    setValues({ ...values, ...fields });
-  }
-
   async function onCreate(event) {
     event.preventDefault();
     const newRelease = {
@@ -32,7 +28,7 @@ export default function FormAddMovie() {
     newRelease.id = id;
     alert("Movie / Documentary Added!!");
     dispatchShows({ type: "ADD_SHOW", payload: newRelease });
-    event.target.reset();
+    setValues({})
     history.push("/");
   }
 

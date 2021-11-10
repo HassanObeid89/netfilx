@@ -10,7 +10,7 @@ import "./css/style.css";
 
 export default function App() {
   // Global state
-  const { uid, setIsLogged, isLogged } = useAuth();
+  const { uid, setIsLogged } = useAuth();
   const { dispatchUser } = useUser();
 
   //Local state
@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {status === 0 && <p>loading...</p>}
+      {status === 0 && <p>Loading...</p>}
       {status === 1 && <Browser />}
       {status === 2 && <p>Error...</p>}
     </div>
