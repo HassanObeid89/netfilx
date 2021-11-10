@@ -23,6 +23,12 @@ export default function HomeScreen() {
       <ul>{Movies}</ul>
       <h2>Documentaries</h2>
       <ul>{Documentaries}</ul>
+      <h2>Documentaries</h2>
+      <ul>{Documentaries}</ul>
+      <h2>Documentaries</h2>
+      <ul>{Documentaries}</ul>
+      <h2>Documentaries</h2>
+      <ul>{Documentaries}</ul>
     </div>
   );
 }
