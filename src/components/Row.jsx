@@ -1,9 +1,14 @@
+import RowCard from "./RowCard";
+
 export default function Row({ data }) {
-  const { name, description, imgUrl, videoLink } = data;
-  const baseUrl = "https://www.youtube.com/watch?";
+  const Shows = data.map((show, index) => <RowCard key={index} show={show} />);
+  console.log(data[0].category)
   return (
-    <li className='row-posters'>
-      <img src={imgUrl} alt="" />
-    </li>
+    <div className='row-posters'>
+      <h2>{data[0].category}</h2>
+      <ul>
+      {Shows}
+      </ul>
+    </div>
   );
 }

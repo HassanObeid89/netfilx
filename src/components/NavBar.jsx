@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/images/netlogo.png";
 import avatar from "../assets/images/Netflix-avatar.png";
+import navShadow from '../assets/images/nav-shadow.png'
 export default function NavBar() {
   const [isShow, setIsShow] = useState(false);
 
@@ -20,7 +21,9 @@ export default function NavBar() {
       <div className="nav_content">
         <img className="nav_logo" src={logo} />
         <img className="nav_avatar" src={avatar} />
+        {/* <img src={navShadow} /> */}
       </div>
+      
     </div>
   );
 }

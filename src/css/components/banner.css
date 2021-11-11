@@ -1,0 +1,15 @@
+.banner{
+    background-image: url('https://phantom-marca.unidadeditorial.es/8256e68fdfac5b6a6c792af7308d27e8/crop/0x0/1597x899/resize/1320/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png');
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    position: relative;
+    object-fit: contain;
+    color: white;
+    
+}
+.banner_contents{
+    margin-left: 30px;
+    padding-top: 140px;
+    height: 190px;
+}
