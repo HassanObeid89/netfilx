@@ -42,6 +42,7 @@ ul::-webkit-scrollbar {
   position: relative;
   overflow: hidden;
   margin-right: 2px;
+  
 }
 
 .row-posters ul li img {
@@ -49,11 +50,7 @@ ul::-webkit-scrollbar {
   width: 100%;
   object-fit: cover;
   border-radius: 4px;
-  
+  cursor: pointer;
 }
-/* .row-posters ul li:hover {
-  transform-origin: left bottom;
-    transform: scale(0.6) translate3d(0px, 125px, 0px);
-    transition-duration: 1300ms;
-    transition-delay: 5000ms;
-} */
+
+

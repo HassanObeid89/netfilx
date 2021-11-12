@@ -10,7 +10,7 @@
 .banner_contents img{
 transform-origin: bottom left;
  height: 150px;
- 
+ margin-bottom: 20px;
 }
 
 .banner_contents {
