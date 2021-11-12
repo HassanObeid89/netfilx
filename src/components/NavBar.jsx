@@ -21,7 +21,6 @@ export default function NavBar() {
       <div className="nav_content">
         <img className="nav_logo" src={logo} />
         <img className="nav_avatar" src={avatar} />
-        {/* <img src={navShadow} /> */}
       </div>
       
     </div>

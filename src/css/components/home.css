@@ -1,20 +1,18 @@
 .row {
   color: #e5e5e5;
-  
   position: absolute;
   top: 75%;
   left: 0;
   right: 0;
-
 }
 
 .row-posters h2{
     text-transform: capitalize;
-    /* vertical-align: bottom; */
     line-height: 1.25vw;
-    font-size: 1.4vw;
+    font-size: 2vw;
     font-weight: 700;
-    margin: 0 4% 0.5em 4%;
+    margin-bottom: 1em;
+    padding-left: 57.594px;
     letter-spacing: 1.5px;
 }
 
@@ -51,4 +49,11 @@ ul::-webkit-scrollbar {
   width: 100%;
   object-fit: cover;
   border-radius: 4px;
+  
 }
+/* .row-posters ul li:hover {
+  transform-origin: left bottom;
+    transform: scale(0.6) translate3d(0px, 125px, 0px);
+    transition-duration: 1300ms;
+    transition-delay: 5000ms;
+} */

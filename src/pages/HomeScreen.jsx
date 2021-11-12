@@ -18,7 +18,7 @@ export default function HomeScreen() {
 
   return (
     <div className='home_page'>
-      <Banner/>
+      <Banner series={Series}/>
       <section className='row'>
       {/* <h2>Series</h2>
       <ul>{Series}</ul>
