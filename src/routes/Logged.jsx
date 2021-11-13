@@ -11,6 +11,7 @@ import FormAddEpisode from "../components/FormAddEpisode";
 import FormAddMovies from "../components/FormAddMovie";
 import NavBar from "../components/NavBar";
 import ModalContainer from "../components/ModalContainer";
+import VideoPlayer from "../components/VideoPlayer";
 
 export default function Logged() {
   
@@ -23,6 +24,7 @@ export default function Logged() {
       <Route path="/add-serie" component={FormAddSerie} />
       <Route path="/add-movie" component={FormAddMovies} />
       <Route path="/home-page" component={HomeScreen}/>
+      <Route path='/watch/:id' component={VideoPlayer}/>
       
     </>
   );
