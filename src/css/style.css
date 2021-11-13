@@ -9,3 +9,5 @@
 @import './components/navBar.css';
 @import './components/banner.css';
 @import './components/button.css';
+@import './components/modalContainer.css';
+@import './components/modalMini.css';

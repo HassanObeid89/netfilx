@@ -1,0 +1,15 @@
+.row-posters{
+    position: relative;
+}
+
+.modal-window {
+    position: absolute;
+    top: -30%;
+    background-color: #181818;
+    z-index: 10000;
+    width: 327px;
+    height: 347px;
+    max-width: 280px;;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.75);
+  }

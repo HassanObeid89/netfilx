@@ -39,18 +39,19 @@ ul::-webkit-scrollbar {
 .row-posters ul li {
   width: 216.797px;
   height: 122.062px;
-  position: relative;
+  
   overflow: hidden;
   margin-right: 2px;
   
 }
 
-.row-posters ul li img {
-  position: absolute;
+.card_wrapper li img {
   width: 100%;
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
 }
+
+
 
 

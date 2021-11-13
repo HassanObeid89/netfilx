@@ -1,4 +1,5 @@
 //Npm package
+import { useState } from "react";
 import { Route } from "react-router-dom";
 
 //Project files
@@ -9,8 +10,10 @@ import FormAddSeason from "../components/FormAddSeason";
 import FormAddEpisode from "../components/FormAddEpisode";
 import FormAddMovies from "../components/FormAddMovie";
 import NavBar from "../components/NavBar";
+import ModalContainer from "../components/ModalContainer";
 
 export default function Logged() {
+  
   return (
     <>
       <NavBar/>
@@ -19,7 +22,8 @@ export default function Logged() {
       <Route path="/add-season/:id" component={FormAddSeason} />
       <Route path="/add-serie" component={FormAddSerie} />
       <Route path="/add-movie" component={FormAddMovies} />
-      <Route path="/home-page" component={HomeScreen} />
+      <Route path="/home-page" component={HomeScreen}/>
+      
     </>
   );
 }
