@@ -1,8 +1,8 @@
 import RowCard from "./RowCard";
 
-export default function Row({ data, setModal }) {
+export default function Row({ data, setMiniModal }) {
   const Shows = data.map((show, index) => (
-    <RowCard setModal={setModal} key={index} show={show} />
+    <RowCard setMiniModal={setMiniModal} key={index} show={show} />
   ));
   return (
     <div className="row-posters">

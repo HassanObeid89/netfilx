@@ -1,9 +1,9 @@
 import ModalMini from "./ModalMini";
 import { useState } from "react";
-import ModalContainer from "./ModalContainer";
+import ModalContainerMini from "./ModalContainerMini";
 export default function RowCard({ show }) {
   
-  const [modal, setModal] = useState(null);
+  const [miniModal, setMiniModal] = useState(null);
   return (
       
     <div className="card_wrapper">
@@ -11,33 +11,10 @@ export default function RowCard({ show }) {
           <img
             src={show.imgUrl}
             alt=""
-            onMouseEnter={() => setModal(<ModalMini setModal={setModal} show={show}/>)}
+            onMouseEnter={() => setMiniModal(<ModalMini setMiniModal={setMiniModal} show={show}/>)}
           />
-         
       </li>
-   
-        <ModalContainer modal={modal}/>
- 
-      {/* <li>
-        {!isMini && (
-          <img
-            src={show.imgUrl}
-            onMouseLeave={() => setIsMini(false)}
-            onMouseEnter={() => setIsMini(true)}
-            alt=""
-          />
-        )}
-      </li> */}
-      {/* <section className="mini_modal_wrapper">
-        {isMini && (
-          <img
-            src={show.imgUrl}
-            onMouseLeave={() => setIsMini(false)}
-            onMouseEnter={() => setIsMini(true)}
-            className="mini_modal"
-          />
-        )}
-      </section> */}
+        <ModalContainerMini modal={miniModal}/>
     </div>
   );
 }

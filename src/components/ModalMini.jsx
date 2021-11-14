@@ -1,8 +1,13 @@
 import {BiPlay} from 'react-icons/bi'
+import {IoIosArrowDropdown} from 'react-icons/io'
 import { Link } from 'react-router-dom';
-export default function ModalMini({show,setModal}) {
+import {useModal} from '../state/ModalProvider'
+import ModalDetails from './ModalDetails';
+export default function ModalMini({show,setMiniModal}) {
+  const {dispatchModal}=useModal()
   return (
-    <div onMouseLeave={() => setModal(null)} className='mini_Modal_wrapper'>
+    // 
+    <div onMouseLeave={() => setMiniModal(null)} className='mini_Modal_wrapper'>
       <section>
       <img src={show.imgUrl}/>
       </section>
@@ -12,8 +17,10 @@ export default function ModalMini({show,setModal}) {
           <BiPlay/>
         </button>
         </Link>
+        {/* <Link to={`/details-modal/${show.id}`}> */}
+        <IoIosArrowDropdown onClick={()=>dispatchModal({type:"SET_MODAL",payload:<ModalDetails/>})} className='detail-btn'/>
+        {/* </Link> */}
       </section>
-
     </div>
   );
 }
