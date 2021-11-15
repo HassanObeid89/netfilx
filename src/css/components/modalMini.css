@@ -4,7 +4,7 @@
     border-radius: 6px;
 }
 
-.mini_Modal_wrapper img {
+.mini_Modal_wrapper .modal-hero {
     width: 100%;
     height: 60%;
     border-top-right-radius: 6px;

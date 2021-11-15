@@ -1,4 +1,4 @@
-export default function showReducer(state, action) {
+export default function modalReducer(state, action) {
     switch (action.type) {
       case "SET_MODAL":
         return setModal(state, action);
@@ -8,8 +8,7 @@ export default function showReducer(state, action) {
   
     function setModal(state, action) {
       const { payload } = action;
-      if (payload !== null) return  payload;
-      return state;
+      return payload;
     }
   }
   

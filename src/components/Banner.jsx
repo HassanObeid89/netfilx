@@ -3,8 +3,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import squid from "../assets/images/squid_banner.webp";
 import squidName from "../assets/images/squid_name.webp";
 export default function Banner({ series }) {
-
-  const url = series[2].imgUrl;
+  
   return (
     <header>
       <div

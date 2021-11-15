@@ -3,15 +3,20 @@ import { FaWindowClose } from "react-icons/fa";
 import { useModal } from "../state/ModalProvider";
 
 export default function ModalContainer() {
-  const {modal}=useModal()
-  console.log(modal)
+  const { modal, dispatchModal } = useModal();
   if (modal === null) return null;
 
   return ReactDom.createPortal(
     <>
-      <div  className="modal-background"></div>
+      <div
+        onClick={() => dispatchModal({ type: "SET_MODAL", payload: null })}
+        className="modal-background"
+      />
       <div className="modal-window ">
-        <FaWindowClose className="icon" />
+        <FaWindowClose
+          className="icon"
+          onClick={() => dispatchModal({ type: "SET_MODAL", payload: null })}
+        />
         {modal}
       </div>
     </>,
