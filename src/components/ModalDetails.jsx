@@ -22,6 +22,7 @@ export default function ModalDetails({ show }) {
       <p>{season}</p>
       </section>
         <section className='episodeSelector-header'>
+            <h3>Episodes</h3>
         <Dropdown state={[isSelected,setIsSelected]} show={show}/>
         </section>
     </div>
