@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { GrPlayFill } from "react-icons/gr";
+import Dropdown from "./Dropdown";
 export default function ModalDetails({ show }) {
+    const [isSelected, setIsSelected] = useState("Season 1");
     const size = Object.keys(show.seasons).length;
     const season = size > 1 ? size +' '+ "Seasons": size+"Season"
   return (
     <div className="details-wrapper">
-    <section>
-      <img className="detail-hero" src={show.imgUrl} alt="" />
+    <section className="detail-hero">
+      <img className="hero-img" src={show.imgUrl} alt="" />
       <div className="hero-shadow" />
       <button className="banner_btn_1">
         <GrPlayFill />
@@ -18,6 +21,9 @@ export default function ModalDetails({ show }) {
       <span>{show.maturityRating}</span>
       <p>{season}</p>
       </section>
+        <section className='episodeSelector-header'>
+        <Dropdown state={[isSelected,setIsSelected]} show={show}/>
+        </section>
     </div>
   );
 }

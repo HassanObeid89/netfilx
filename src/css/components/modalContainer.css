@@ -5,9 +5,9 @@
     transform: translate(-50%, -50%);
     background-color: #181818;
     z-index: 10000;
-    width: 850px;
+    width: 90%;
     height: 90%;
-    min-width: 850px;
+    max-width: 850px;
     border-radius: 12px;
     /* width: 850px;
         top: 211px;
