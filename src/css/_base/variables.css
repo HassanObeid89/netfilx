@@ -1,12 +1,12 @@
 :root {
   /* Colors */
-  --color-pink: #eb4868;
-  --color-pink-light: #fdecec;
+  --color-primary: #e50914;
+  --color-secondary: #fdecec;
   --color-gray-dark: #dbdbdb;
   --color-gray-light: #fafafa;
 
   /* Fonts */
-  --font-family: "Poppins";
+  --font-family: "Netflix Sans", Arial, Helvetica, sans-serif;
   --font-title-mobile: 18px;
   --font-title-desktop: 25px;
 

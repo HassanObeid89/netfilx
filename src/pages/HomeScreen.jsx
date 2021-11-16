@@ -1,29 +1,25 @@
+import Banner from "../components/Banner";
 import Row from "../components/Row";
 import { useShow } from "../state/ShowsProvider";
 
-export default function HomeScreen() {
- const {shows} = useShow()
-  const Movies = shows
-    .filter((movie) => movie.category === "movies")
-    .map((movie, index) => <Row key={index} data={movie} />);
+export default function HomeScreen({ setMiniModal }) {
+  const { shows } = useShow();
+  const Movies = shows.filter((movie) => movie.category === "movies");
 
-  const Series = shows
-    .filter((serie) => serie.category === "series")
-    .map((serie, index) => <Row key={index} data={serie} />);
+  const Series = shows.filter((serie) => serie.category === "series");
 
-  const Documentaries = shows
-    .filter((documentary) => documentary.category === "documentaries")
-    .map((documentary, index) => <Row key={index} data={documentary} />);
+  const Documentaries = shows.filter(
+    (documentary) => documentary.category === "documentaries"
+  );
 
   return (
-    <div>
-      <h1>Home screen</h1>
-      <h2>Series</h2>
-      {Series}
-      <h2>Movies</h2>
-      {Movies}
-      <h2>Documentaries</h2>
-      {Documentaries}
+    <div className="home_page">
+      <Banner series={Series} />
+      <section className="row">
+        <Row setMiniModal={setMiniModal} data={Series} />
+        <Row setMiniModal={setMiniModal} data={Movies} />
+        <Row setMiniModal={setMiniModal} data={Documentaries} />
+      </section>
     </div>
   );
 }

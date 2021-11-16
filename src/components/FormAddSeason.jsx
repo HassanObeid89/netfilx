@@ -5,7 +5,7 @@ import { useParams, useHistory } from "react-router-dom";
 //Project files
 import { updateDocument } from "../scripts/firestore";
 import { useShow } from "../state/ShowsProvider";
-import SeasonList from "./SeasonList";
+// import SeasonList from "./SeasonList";
 
 export default function FormAddSeason() {
   //Global state
@@ -19,11 +19,11 @@ export default function FormAddSeason() {
 
   const serie = shows.find((serie) => serie.id === id);
 
-  const Seasons = shows
-    .filter((serie) => serie.id === id)
-    .map((serie) => (
-      <SeasonList key={serie.id} serie={serie} seasons={serie.seasons} />
-    ));
+  // const Seasons = shows
+  //   .filter((serie) => serie.id === id)
+  //   .map((serie) => (
+  //     <SeasonList key={serie.id} serie={serie} seasons={serie.seasons} />
+  //   ));
 
   //Methods
   async function onUpdate(event) {
@@ -59,7 +59,7 @@ export default function FormAddSeason() {
       <button className="primary-button" onClick={(event) => onUpdate(event)}>
         Add Season
       </button>
-      {shows.seasons !== null && Seasons}
+      {/* {shows.seasons !== null && Seasons} */}
       <button className="primary-button" onClick={(event) => goBack(event)}>
         Go back
       </button>

@@ -1,0 +1,51 @@
+.row {
+  color: #e5e5e5;
+  position: absolute;
+  top: 75%;
+  left: 0;
+  right: 0;
+}
+
+.row-posters h2 {
+  text-transform: capitalize;
+  line-height: 1.25vw;
+  font-size: 2vw;
+  font-weight: 700;
+  margin-bottom: 1em;
+  padding-left: 57.594px;
+  letter-spacing: 1.5px;
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+.row-posters {
+  margin: 3vw 0;
+  box-sizing: border-box;
+}
+
+.row-posters ul {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  column-gap: 0px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 0 0 0 57.594px;
+}
+
+.row-posters ul li {
+  width: 216.797px;
+  height: 122.062px;
+
+  overflow: hidden;
+  margin-right: 2px;
+}
+
+.card_wrapper li img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+}

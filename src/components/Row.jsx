@@ -1,14 +1,13 @@
-export default function Row({ data }) {
-  const { name, description, imgUrl, videoLink } = data;
-  const baseUrl = "https://www.youtube.com/watch?";
+import RowCard from "./RowCard";
+
+export default function Row({ data, setMiniModal }) {
+  const Shows = data.map((show, index) => (
+    <RowCard setMiniModal={setMiniModal} key={index} show={show} />
+  ));
   return (
-    <div>
-      {name}
-      {description}
-      <img src={imgUrl} alt="" />
-      <a target="_blank" href={`${baseUrl}${videoLink}`}>
-        Play
-      </a>
+    <div className="row-posters">
+      <h2>{data[0].category}</h2>
+      <ul>{Shows}</ul>
     </div>
   );
 }

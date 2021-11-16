@@ -14,7 +14,7 @@ export default function FormAddMovie() {
   const { dispatchShows } = useShow();
 
   //Custom hook
-  const {values, setValues,onChange} = useForm();
+  const { values, setValues, onChange } = useForm();
 
   const history = useHistory();
 
@@ -28,7 +28,7 @@ export default function FormAddMovie() {
     newRelease.id = id;
     alert("Movie / Documentary Added!!");
     dispatchShows({ type: "ADD_SHOW", payload: newRelease });
-    setValues({})
+    setValues({});
     history.push("/");
   }
 

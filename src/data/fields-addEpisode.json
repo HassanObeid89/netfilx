@@ -1,21 +1,20 @@
 [
-    {
-      "key": "name",
-      "label": "Name",
-      "placeholder": "Army Of Thieves",
-      "type": "text"
-    },
-    {
-      "key": "description",
-      "label": "Description",
-      "placeholder": "Is this prequel to Army of the death...",
-      "type": "text"
-    },
-    {
-      "key": "videoLink",
-      "label": "Video Id",
-      "placeholder": "StuFfLouaNw",
-      "type": "text"
-    }
-  ]
-  
+  {
+    "key": "name",
+    "label": "Name",
+    "placeholder": "Army Of Thieves",
+    "type": "text"
+  },
+  {
+    "key": "description",
+    "label": "Description",
+    "placeholder": "Is this prequel to Army of the death...",
+    "type": "text"
+  },
+  {
+    "key": "videoLink",
+    "label": "Video Id",
+    "placeholder": "StuFfLouaNw",
+    "type": "text"
+  }
+]
