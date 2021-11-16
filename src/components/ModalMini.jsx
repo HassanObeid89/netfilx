@@ -6,7 +6,8 @@ import ModalDetails from "./ModalDetails";
 
 export default function ModalMini({ show, setMiniModal }) {
   const { dispatchModal } = useModal();
-
+  const videoId = show.videoLink || show.seasons["Season 1"][0].videoLink
+  
   function onOpen(){
     dispatchModal({ type: "SET_MODAL", payload: <ModalDetails show={show}/> })
     let windowOffset = window.scrollY
@@ -19,7 +20,7 @@ export default function ModalMini({ show, setMiniModal }) {
         <img className='modal-hero' src={show.imgUrl} />
       </section>
       <section className="controls">
-        <Link to={`/watch/${show.videoLink}`}>
+        <Link to={`/watch/${videoId}`}>
           <button className="round-btn">
             <BiPlay />
           </button>
