@@ -1,5 +1,6 @@
 import { useParams, useHistory } from "react-router-dom";
 import Reatyoutube from "react-youtube";
+import {BiArrowBack} from 'react-icons/bi'
 
 export default function VideoPlayer() {
   const { id } = useParams();
@@ -17,13 +18,14 @@ export default function VideoPlayer() {
   };
   return (
     <div className="player_wrapper">
+      <BiArrowBack onClick={() => location.goBack()}/>
       <Reatyoutube
         className="player"
         opts={opts}
         allowsFullscreenVideo={true}
         videoId={id}
       />
-      <button onClick={() => location.goBack()}>go back</button>
+      
     </div>
   );
 }
