@@ -1,4 +1,42 @@
-.episode-row{
-    color: white;
-    list-style: decimal;
+.episode-row {
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.episode-row a {
+  text-decoration: none;
+  color: white;
+}
+
+.episode-row p {
+  width: 90%;
+  color: #d2d2d2;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: episodes;
+}
+
+.episode-row:before {
+  content: counter(episodes);
+  counter-increment: episodes;
+  font-size: 1.5em;
+  color: rgb(210, 210, 210);
+  flex: 0 0 7%;
+}
+
+.episode-row {
+  display: flex;
+  align-items: center;
+
+  border-top: solid gray 1px;
+
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.episode-row:last-child {
+  border-bottom: solid gray 1px;
 }

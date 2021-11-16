@@ -7,9 +7,9 @@ export default function EpisodeList({show}) {
     <EpisodeCard episode={episode} />
   ));
   return (
-    <div>
+    <div >
       <section className="episodeSelector-header">
-        <h3>Episodes</h3>
+        <h2>Episodes</h2>
         <Dropdown state={[isSelected, setIsSelected]} show={show} />
       </section>
       <ol>

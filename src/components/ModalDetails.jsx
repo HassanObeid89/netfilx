@@ -2,10 +2,9 @@ import { GrPlayFill } from "react-icons/gr";
 import EpisodeList from "./EpisodeList";
 
 export default function ModalDetails({ show }) {
-  
-  const size = show.category ==='series' && Object.keys(show.seasons).length;
+  const size = show.category === "series" && Object.keys(show.seasons).length;
   const season = size > 1 ? size + " " + "Seasons" : size + "Season";
-  
+
   return (
     <div className="details-wrapper">
       <section className="detail-hero">
@@ -16,14 +15,16 @@ export default function ModalDetails({ show }) {
           Play
         </button>
       </section>
-      <section className="details-header">
-        <p>New</p>
-        <p>2021</p>
-        <span>{show.maturityRating}</span>
-        {size > 0 &&  <p>{season}</p>}
-      </section>
-      <p>{show.description}</p>
-      {size > 0 && <EpisodeList show={show}/>}
+      <div className="body-wrapper">
+        <section className="details-header">
+          <p>New</p>
+          <p>2021</p>
+          <p className="rate">{show.maturityRating}</p>
+          {size > 0 && <p>{season}</p>}
+        </section>
+        <p className="description">{show.description}</p>
+        {size > 0 && <EpisodeList show={show} />}
+      </div>
     </div>
   );
 }

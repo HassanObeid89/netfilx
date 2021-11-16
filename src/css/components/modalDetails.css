@@ -1,14 +1,18 @@
 .details-wrapper {
+
   width: 100%;
   height: 100%;
   font-family: var(--font-family);
- 
+ color: white;
+ overflow: hidden;
+ font-size: 16px;
 }
 
 .detail-hero {
   position: relative;
   width: 100%;
-  height: 70%;
+  height: 470px;
+ 
 }
 
 .hero-img{
@@ -37,23 +41,33 @@
   max-height: 42px;
 }
 .details-header{
-    color: white;
     display: flex;
     width: 35%;
-    padding: 30px;
-    margin-left: 25px;
-    justify-content:space-between ;
+    padding: 30px 0 30px 0;
+    justify-content:flex-start;
     align-items: center;
 }
-.details-header span{
+.details-header p{
+  margin-right: 15px;
+}
+
+.details-header .rate{
     border: gray solid 1px;
     padding: 3px;
 }
 
 .episodeSelector-header{
-  color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+}
+
+.details-wrapper .description{
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.body-wrapper{
+  margin: 0 50px 0 50px;
 }
 

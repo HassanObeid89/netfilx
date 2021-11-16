@@ -7,6 +7,12 @@ import ModalDetails from "./ModalDetails";
 export default function ModalMini({ show, setMiniModal }) {
   const { dispatchModal } = useModal();
 
+  function onOpen(){
+    dispatchModal({ type: "SET_MODAL", payload: <ModalDetails show={show}/> })
+    let windowOffset = window.scrollY
+    document.getElementById('root').setAttribute('style',`position: fixed; top: -${windowOffset}px; left:0;right:0`)
+  }
+
   return (
     <div onMouseLeave={() => setMiniModal(null)} className="mini_Modal_wrapper">
       <section>
@@ -19,9 +25,7 @@ export default function ModalMini({ show, setMiniModal }) {
           </button>
         </Link>
         <IoIosArrowDropdown
-          onClick={() =>
-            dispatchModal({ type: "SET_MODAL", payload: <ModalDetails show={show}/> })
-          }
+          onClick={onOpen}
           className="detail-btn"
         />
       </section>
