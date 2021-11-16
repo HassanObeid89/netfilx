@@ -6,14 +6,14 @@
   right: 0;
 }
 
-.row-posters h2{
-    text-transform: capitalize;
-    line-height: 1.25vw;
-    font-size: 2vw;
-    font-weight: 700;
-    margin-bottom: 1em;
-    padding-left: 57.594px;
-    letter-spacing: 1.5px;
+.row-posters h2 {
+  text-transform: capitalize;
+  line-height: 1.25vw;
+  font-size: 2vw;
+  font-weight: 700;
+  margin-bottom: 1em;
+  padding-left: 57.594px;
+  letter-spacing: 1.5px;
 }
 
 ul::-webkit-scrollbar {
@@ -23,7 +23,6 @@ ul::-webkit-scrollbar {
 .row-posters {
   margin: 3vw 0;
   box-sizing: border-box;
-  
 }
 
 .row-posters ul {
@@ -39,10 +38,9 @@ ul::-webkit-scrollbar {
 .row-posters ul li {
   width: 216.797px;
   height: 122.062px;
-  
+
   overflow: hidden;
   margin-right: 2px;
-  
 }
 
 .card_wrapper li img {
@@ -51,7 +49,3 @@ ul::-webkit-scrollbar {
   border-radius: 4px;
   cursor: pointer;
 }
-
-
-
-

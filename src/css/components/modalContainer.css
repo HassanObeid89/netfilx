@@ -1,32 +1,30 @@
 .modal-window {
-    position: relative;
-    top: 211px;
-    left: 50%;
-    transform: translate(-50%);
-    transform-origin: center top;
-    background-color: #181818;
-    z-index: 200;
-    width: 90%;
-    height: auto;
-    max-width: 850px;
-    border-radius: 12px;
-  
-  }
-  .modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-  }
-  
-  .modal-window .icon {
-    position: absolute;
-    right: 2%;
-    top: 2%;
-    color: brown;
-    font-size: 20px;
-  }
-  
+  position: relative;
+  top: 211px;
+  left: 50%;
+  transform: translate(-50%);
+  transform-origin: center top;
+  background-color: #181818;
+  z-index: 200;
+  width: 90%;
+  height: auto;
+  max-width: 850px;
+  border-radius: 12px;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.modal-window .icon {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  color: brown;
+  font-size: 20px;
+}

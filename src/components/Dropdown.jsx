@@ -1,9 +1,9 @@
 import { useState } from "react";
-import {IoMdArrowDropdown, IoMdArrowDropup} from 'react-icons/io'
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 export default function Dropdown({ state, show }) {
   const [open, setOpen] = useState(false);
-  const [isSelected,setIsSelected] = state
+  const [isSelected, setIsSelected] = state;
   const toggle = () => setOpen(!open);
 
   const seasons = Object.keys(show.seasons).sort((a, b) => a - b);
@@ -34,7 +34,7 @@ export default function Dropdown({ state, show }) {
           <p className="dd-header_title-bold">{isSelected}</p>
         </div>
         <div className="dd-header_action">
-          <p>{open ? <IoMdArrowDropup/> : <IoMdArrowDropdown/>}</p>
+          <p>{open ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}</p>
         </div>
       </div>
       {open && <ul className="dd-list">{season}</ul>}

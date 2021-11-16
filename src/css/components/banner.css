@@ -3,14 +3,14 @@
   object-fit: cover;
   color: white;
   height: 100vh;
-  opacity:.71;
+  opacity: 0.71;
   z-index: -1;
 }
 
-.banner_contents img{
-transform-origin: bottom left;
- height: 150px;
- margin-bottom: 20px;
+.banner_contents img {
+  transform-origin: bottom left;
+  height: 150px;
+  margin-bottom: 20px;
 }
 
 .banner_contents {
@@ -20,10 +20,18 @@ transform-origin: bottom left;
   opacity: 1;
 }
 
-.shadow{
-    position: absolute;
-    top: 85vh;
-    height: 7.4rem;
-    width: 100%;
-    background-image: linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);
+.shadow {
+  position: absolute;
+  top: 85vh;
+  height: 7.4rem;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0) 0,
+    rgba(20, 20, 20, 0.15) 15%,
+    rgba(20, 20, 20, 0.35) 29%,
+    rgba(20, 20, 20, 0.58) 44%,
+    #141414 68%,
+    #141414 100%
+  );
 }

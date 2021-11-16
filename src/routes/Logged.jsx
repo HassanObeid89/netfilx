@@ -16,15 +16,15 @@ import ModalContainer from "../components/ModalContainer";
 export default function Logged() {
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Route path="/" exact component={AdminPage} />
       <Route path="/add-episode/:id/:season" component={FormAddEpisode} />
       <Route path="/add-season/:id" component={FormAddSeason} />
       <Route path="/add-serie" component={FormAddSerie} />
       <Route path="/add-movie" component={FormAddMovies} />
-      <Route path="/home-page" component={HomeScreen}/>
-      <Route path='/watch/:id' component={VideoPlayer}/>
-      <ModalContainer/>
+      <Route path="/home-page" component={HomeScreen} />
+      <Route path="/watch/:id" component={VideoPlayer} />
+      <ModalContainer />
     </>
   );
 }

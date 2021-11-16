@@ -16,7 +16,7 @@ export default function FormAddEpisode() {
   const { id } = useParams();
   const history = useHistory();
   const { season } = useParams();
-  const {values, setValues,onChange} = useForm();
+  const { values, setValues, onChange } = useForm();
   const serie = shows.find((serie) => serie.id === id);
   const keys = Object.keys(serie.seasons);
   const seasonName = keys.filter((key) => key === season);

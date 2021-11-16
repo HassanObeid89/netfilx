@@ -41,7 +41,6 @@
   align-items: center;
   justify-items: center;
   -webkit-font-smoothing: antialiased;
-
 }
 
 svg {
@@ -76,5 +75,4 @@ svg {
   justify-items: center;
   -webkit-font-smoothing: antialiased;
   text-decoration: none;
- 
 }

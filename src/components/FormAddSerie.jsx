@@ -34,11 +34,7 @@ export default function FormAddSerie() {
   }
 
   const InputFields = fieldsAddSerie.map((input, index) => (
-    <InputField
-      key={index}
-      options={input}
-      onChange={onChange}
-    />
+    <InputField key={index} options={input} onChange={onChange} />
   ));
 
   return (

@@ -1,7 +1,6 @@
-.dd-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
+.dd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
-

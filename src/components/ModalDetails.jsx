@@ -4,15 +4,14 @@ import { useModal } from "../state/ModalProvider";
 import EpisodeList from "./EpisodeList";
 
 export default function ModalDetails({ show }) {
-
-  const {dispatchModal}=useModal()
+  const { dispatchModal } = useModal();
   const size = show.category === "series" && Object.keys(show.seasons).length;
   const season = size > 1 ? size + " " + "Seasons" : size + "Season";
-  const videoId = show.videoLink || show.seasons["Season 1"][0].videoLink
-  
-  function onClose(){
-    dispatchModal({ type: "SET_MODAL", payload: null })
-    document.getElementById('root').setAttribute('style','')
+  const videoId = show.videoLink || show.seasons["Season 1"][0].videoLink;
+
+  function onClose() {
+    dispatchModal({ type: "SET_MODAL", payload: null });
+    document.getElementById("root").setAttribute("style", "");
   }
 
   return (
@@ -21,10 +20,10 @@ export default function ModalDetails({ show }) {
         <img className="hero-img" src={show.imgUrl} alt="" />
         <div className="hero-shadow" />
         <Link to={`/watch/${videoId}`}>
-        <button onClick={onClose} className="banner_btn_1">
-          <GrPlayFill />
-          Play
-        </button>
+          <button onClick={onClose} className="banner_btn_1">
+            <GrPlayFill />
+            Play
+          </button>
         </Link>
       </section>
       <div className="body-wrapper">
