@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Reatyoutube from "react-youtube";
 
 export default function VideoPlayer() {
-    const {id} = useParams()
-    
+  const { id } = useParams();
+  const location = useHistory();
   const opts = {
     height: "100%",
     width: "100%",
@@ -16,13 +16,14 @@ export default function VideoPlayer() {
     },
   };
   return (
-    <div className='player_wrapper'>
+    <div className="player_wrapper">
       <Reatyoutube
-      className='player'
+        className="player"
         opts={opts}
         allowsFullscreenVideo={true}
         videoId={id}
       />
+      <button onClick={() => location.goBack()}>go back</button>
     </div>
   );
 }

@@ -8,7 +8,6 @@ export default function ModalContainer() {
 
   function onClose(){
     dispatchModal({ type: "SET_MODAL", payload: null })
-    let windowOffset = window.scrollY
     document.getElementById('root').setAttribute('style','')
   }
   return ReactDom.createPortal(
