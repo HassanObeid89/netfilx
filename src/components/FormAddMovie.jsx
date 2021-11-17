@@ -29,15 +29,20 @@ export default function FormAddMovie() {
     alert("Movie / Documentary Added!!");
     dispatchShows({ type: "ADD_SHOW", payload: newRelease });
     setValues({});
-    history.push("/");
+    history.push("/admin-page");
   }
 
   const InputFields = fieldsAddMovie.map((input, index) => (
     <InputField key={index} options={input} onChange={onChange} />
   ));
 
+  function goBack(event) {
+    event.preventDefault();
+    history.goBack();
+  }
+
   return (
-    <form onSubmit={onCreate}>
+    <form>
       <h1>Add Movie Or Documentary</h1>
       <InputImage onChange={onChange} imgUrl={values.imgUrl} />
       <select
@@ -60,8 +65,11 @@ export default function FormAddMovie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button className="primary-button" type="submit">
+      <button onClick={(event)=>onCreate(event)} className="primary-button" type="submit">
         Submit
+      </button>
+      <button className="primary-button" onClick={(event) => goBack(event)}>
+        Cancel
       </button>
     </form>
   );

@@ -26,6 +26,7 @@
 }
 
 .nav_avatar {
+  position: relative;
   width: 30px;
   cursor: pointer;
 }
@@ -33,4 +34,41 @@
   display: flex;
   justify-content: space-between;
   width: 250px;
+  margin-right: 20px;
+}
+
+.drop {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background-color: rgba(0, 0, 0, .72);
+  padding: 30px 30px 30px 15px;
+  border: 0.1px solid rgba(255,255,255,.85);
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  z-index: 2;
+}
+
+.drop button{
+  background-color: rgba(0, 0, 0, .72);
+  border: 0;
+  color: white;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.drop p{
+  cursor: pointer;
+}
+
+.drop button:hover{
+  text-decoration: underline;
+}
+.drop p:hover{
+  text-decoration: underline;
 }
