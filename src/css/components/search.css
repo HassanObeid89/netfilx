@@ -1,0 +1,25 @@
+.search_wrapper input {
+  position: relative;
+  background: black;
+  border-radius: 0px;
+  border: 1px solid gray;
+  color: #fff;
+  outline: 0;
+  padding: 8px;
+}
+
+.result {
+  position: absolute;
+  top: 150%;
+  left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search_wrapper .cancel {
+  position: absolute;
+  right: 130px;
+  top: 25px;
+  color: white;
+  cursor: pointer;
+}

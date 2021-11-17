@@ -1,4 +1,4 @@
-input {
+.input_primary {
   background: #333;
   border-radius: 4px;
   border: 0;
@@ -24,12 +24,9 @@ select {
   padding: 0 8px;
 }
 
-input::placeholder {
+.input_primary::placeholder {
   color: transparent;
 }
-/* input:last-of-type {
-    margin-bottom: 30px;
-  } */
 
 form {
   display: flex;
@@ -46,7 +43,7 @@ fieldset {
   position: relative;
   padding: 15px 0 0;
   border: 0;
-  /* margin-top: 10px; */
+
 }
 
 label span {
@@ -59,19 +56,19 @@ label span {
   color: #8c8c8c;
 }
 
-input:placeholder-shown ~ label span {
+.input_primary:placeholder-shown ~ label span {
   font-size: 16px;
   cursor: text;
   top: 30px;
 }
 
-input:focus ~ label span {
+.input_primary:focus ~ label span {
   position: absolute;
   top: 20px;
   display: block;
   transition: 0.2s;
   font-size: 14px;
 }
-input {
+.input_primary {
   align-items: center;
 }
