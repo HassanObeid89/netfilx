@@ -13,7 +13,7 @@ import background from "../assets/images/loginBackground.jpeg";
 import logo from "../assets/images/netlogo.png";
 export default function SignIn() {
   //Global state
-  const { dispatchUser } = useUser();
+  const { user,dispatchUser } = useUser();
   const { setIsLogged } = useAuth();
 
   //Local State
@@ -37,12 +37,12 @@ export default function SignIn() {
 
   async function onSuccess(uid) {
     const document = await getDocument("users", uid);
-
-    dispatchUser({ type: "SET_USER", payload: document });
+    console.log(document)
+    await dispatchUser({ type: "SET_USER", payload: document });
+    document.role === 'admin' ? location.push("/admin-page"):location.push("/")
     setIsLogged(true);
-    location.push("/");
   }
-
+  
   function onFailure(message) {
     setErrorMessage(message);
   }

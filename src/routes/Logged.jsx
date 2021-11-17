@@ -48,12 +48,12 @@ export default function Logged() {
       {status === 1 && (
         <div>
           <NavBar />
-          <Route path="/" exact component={AdminPage} />
+          <Route path="/" exact component={HomeScreen} />
           <Route path="/add-episode/:id/:season" component={FormAddEpisode} />
           <Route path="/add-season/:id" component={FormAddSeason} />
           <Route path="/add-serie" component={FormAddSerie} />
           <Route path="/add-movie" component={FormAddMovies} />
-          <Route path="/home-page" component={HomeScreen} />
+          <Route path="/admin-page" component={AdminPage} />
           <Route path="/watch/:id" component={VideoPlayer} />
           <ModalContainer />
         </div>
