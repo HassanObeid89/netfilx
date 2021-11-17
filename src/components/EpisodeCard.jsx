@@ -13,6 +13,7 @@ export default function EpisodeCard({ episode }) {
         <h3>{episode.name}</h3>
         <p>{episode.description}</p>
       </Link>
+      
     </li>
   );
 }

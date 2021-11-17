@@ -35,11 +35,10 @@ export default function AdminPage() {
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
 
   return (
-    <div>
-      <h1>admin page</h1>
+    <div className='admin-page'>
       <h2>Movies & Documentaries</h2>
       {Movies.length > 0 || Documentaries.length > 0 ? (
-        <ul>
+        <ul className='shows-wrapper'>
           {Movies}
           {Documentaries}
         </ul>
@@ -47,14 +46,14 @@ export default function AdminPage() {
         <p>No Movies or Documentaries yet!</p>
       )}
       <Link className="primary-button" to="/add-movie">
-        Add Movie & Documentary
+        Add Movie / Documentary
       </Link>
       <h2>Series</h2>
-      <ul>{Series.length > 0 ? Series : <p>No Series yet!</p>}</ul>
+      <ul className='shows-wrapper'>{Series.length > 0 ? Series : <p>No Series yet!</p>}</ul>
       <Link className="primary-button" to="/add-serie">
         Add Serie
       </Link>
-      <button onClick={onLogout}>Sign Out</button>
+      {/* <button onClick={onLogout}>Sign Out</button> */}
     </div>
   );
 }
