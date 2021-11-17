@@ -28,8 +28,7 @@ export default function FormAddSerie() {
     newRelease.id = id;
     dispatchShows({ type: "ADD_SHOW", payload: newRelease });
     alert("Serie added");
-    event.target.reset();
-    history.push("/");
+    history.push("/admin-page");
     setValues({});
   }
 
@@ -37,8 +36,13 @@ export default function FormAddSerie() {
     <InputField key={index} options={input} onChange={onChange} />
   ));
 
+  function goBack(event) {
+    event.preventDefault();
+    history.goBack();
+  }
+
   return (
-    <form onSubmit={onCreate}>
+    <form>
       <h1>Add Serie</h1>
       <InputImage onChange={onChange} imgUrl={values.imgUrl} />
       {InputFields}
@@ -52,8 +56,11 @@ export default function FormAddSerie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button className="primary-button" type="submit">
+      <button onClick={(event)=>onCreate(event)} className="primary-button" type="submit">
         Submit
+      </button>
+      <button className="primary-button" onClick={(event) => goBack(event)}>
+        Cancel
       </button>
     </form>
   );

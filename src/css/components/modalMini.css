@@ -34,10 +34,12 @@
   text-align: center;
   vertical-align: center;
   margin: 0px;
+  cursor: pointer;
 }
 
 .detail-btn {
   font-size: 40px;
   color: white;
   margin: 0;
+  cursor: pointer;
 }

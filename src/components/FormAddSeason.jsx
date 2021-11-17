@@ -49,7 +49,7 @@ export default function FormAddSeason() {
       </button>
       {serie.seasons !== {} ? Seasons : <p>No Seasons yet! Click Add Season To Add One</p>}
       <button className="primary-button" onClick={(event) => goBack(event)}>
-        Go back
+        Cancel
       </button>
     </form>
   );
