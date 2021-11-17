@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useShow } from "../state/ShowsProvider";
 import RowCard from "./RowCard";
 import { useHistory } from "react-router";
-import {MdClose} from 'react-icons/md'
+import { MdClose } from "react-icons/md";
 export default function Search() {
   const { shows } = useShow();
   const history = useHistory();
@@ -11,10 +11,10 @@ export default function Search() {
     history.push("/search");
     setSearchTerm(event.target.value);
   }
-  function onCancel(event){
-    history.push('/')
-    setSearchTerm('')
-//   event.target.reset()
+  function onCancel(event) {
+    event.preventDefault();
+    history.push("/");
+    setSearchTerm("");
   }
   const filtered = shows
     .filter((item) => {
@@ -27,12 +27,8 @@ export default function Search() {
     .map((item) => <RowCard show={item} />);
   return (
     <div className="search_wrapper">
-      <input
-        type="text"
-        placeholder="search..."
-        onChange={onSearch}
-      />
-      <MdClose className='cancel' onClick={onCancel}/>
+      <input type="text" placeholder="search..." onChange={onSearch} />
+      <MdClose className="cancel" onClick={(event) => onCancel(event)} />
       <div className="result">{searchTerm !== "" && filtered}</div>
     </div>
   );
