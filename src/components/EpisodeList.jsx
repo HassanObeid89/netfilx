@@ -5,7 +5,7 @@ import { useUser } from "../state/UserProvider";
 import Dropdown from "./Dropdown";
 import EpisodeCard from "./EpisodeCard";
 export default function EpisodeList({ show }) {
-  const {user}=useUser()
+  const { user } = useUser();
   const [isSelected, setIsSelected] = useState("Season 1");
 
   const Episodes =
@@ -13,7 +13,7 @@ export default function EpisodeList({ show }) {
     show.seasons[isSelected].map((episode) => (
       <EpisodeCard episode={episode} />
     ));
-    
+
   return (
     <div>
       {show.seasons[isSelected] !== undefined ? (
@@ -25,7 +25,7 @@ export default function EpisodeList({ show }) {
         <p>Comming Soon...</p>
       )}
       <ol>{show.seasons !== {} && Episodes}</ol>
-      {show.seasons[isSelected] !== undefined && user.role==='admin' && (
+      {show.seasons[isSelected] !== undefined && user.role === "admin" && (
         <Link
           className="primary-button"
           to={`/add-episode/${show.id}/${isSelected}`}

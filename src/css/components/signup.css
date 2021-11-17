@@ -1,15 +1,15 @@
 .signupScreen {
-    position: relative;
-    height: 100vh;
-    background: url("../../assets/images/signup_background.jpeg") left no-repeat;
-    background-size: cover;
-  }
+  position: relative;
+  height: 100vh;
+  background: url("../../assets/images/signup_background.jpeg") left no-repeat;
+  background-size: cover;
+}
 
-  .signupScreen .login_body{
-      background-color: white;
-      color: black;
-  }
+.signupScreen .login_body {
+  background-color: white;
+  color: black;
+}
 
-  .signupScreen .login_body a{
-    color: black;  
+.signupScreen .login_body a {
+  color: black;
 }

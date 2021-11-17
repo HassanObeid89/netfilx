@@ -8,7 +8,7 @@ import Search from "./Search";
 
 export default function NavBar() {
   const [isShow, setIsShow] = useState(false);
-  const [isDrop, setIsDrop] = useState(false)
+  const [isDrop, setIsDrop] = useState(false);
   //Global state
   const { setIsLogged } = useAuth();
   //Properties
@@ -36,16 +36,20 @@ export default function NavBar() {
     <div className={`nav ${isShow && "nav_black"}`}>
       <div className="nav_content">
         <img className="nav_logo" src={logo} />
-        <div className='nav_left'>
+        <div className="nav_left">
           <Search />
-          <img className="nav_avatar"  onMouseEnter={()=>setIsDrop(!isDrop)} src={avatar} />
-          {isDrop && 
-          <div onMouseLeave={()=>setIsDrop(!isDrop)} className='drop'>
-            <p>Account</p>
-            <p>Help Centre</p>
-          <button  onClick={onLogout}>Sign out of Netflix</button>
-          </div>
-          }
+          <img
+            className="nav_avatar"
+            onMouseEnter={() => setIsDrop(!isDrop)}
+            src={avatar}
+          />
+          {isDrop && (
+            <div onMouseLeave={() => setIsDrop(!isDrop)} className="drop">
+              <p>Account</p>
+              <p>Help Centre</p>
+              <button onClick={onLogout}>Sign out of Netflix</button>
+            </div>
+          )}
         </div>
       </div>
     </div>

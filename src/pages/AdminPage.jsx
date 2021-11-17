@@ -23,29 +23,29 @@ export default function AdminPage() {
     .filter((documentary) => documentary.category === "documentaries")
     .map((documentary, index) => <ShowCard key={index} data={documentary} />);
 
-  return (
-    user.role === "admin" ? (
-      <div className="admin-page">
-        <h2>Movies & Documentaries</h2>
-        {Movies.length > 0 || Documentaries.length > 0 ? (
-          <ul className="shows-wrapper">
-            {Movies}
-            {Documentaries}
-          </ul>
-        ) : (
-          <p>No Movies or Documentaries yet!</p>
-        )}
-        <Link className="primary-button" to="/add-movie">
-          Add Movie / Documentary
-        </Link>
-        <h2>Series</h2>
+  return user.role === "admin" ? (
+    <div className="admin-page">
+      <h2>Movies & Documentaries</h2>
+      {Movies.length > 0 || Documentaries.length > 0 ? (
         <ul className="shows-wrapper">
-          {Series.length > 0 ? Series : <p>No Series yet!</p>}
+          {Movies}
+          {Documentaries}
         </ul>
-        <Link className="primary-button" to="/add-serie">
-          Add Serie
-        </Link>
-      </div>
-    ):<ErrorPage/>
+      ) : (
+        <p>No Movies or Documentaries yet!</p>
+      )}
+      <Link className="primary-button" to="/add-movie">
+        Add Movie / Documentary
+      </Link>
+      <h2>Series</h2>
+      <ul className="shows-wrapper">
+        {Series.length > 0 ? Series : <p>No Series yet!</p>}
+      </ul>
+      <Link className="primary-button" to="/add-serie">
+        Add Serie
+      </Link>
+    </div>
+  ) : (
+    <ErrorPage />
   );
 }

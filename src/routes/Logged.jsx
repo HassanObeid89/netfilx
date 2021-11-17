@@ -56,7 +56,6 @@ export default function Logged() {
           <Route path="/add-movie" component={FormAddMovies} />
           <Route path="/admin-page" component={AdminPage} />
           <Route path="/watch/:id" component={VideoPlayer} />
-          {/* <Route path="/search" component={RowCard}/> */}
           <ModalContainer />
         </div>
       )}

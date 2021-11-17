@@ -9,11 +9,10 @@ import signinFields from "../data/signin-fields.json";
 import InputField from "../components/InputField";
 import { useUser } from "../state/UserProvider";
 import { useAuth } from "../state/AuthProvider";
-import background from "../assets/images/loginBackground.jpeg";
 import logo from "../assets/images/netlogo.png";
 export default function SignIn() {
   //Global state
-  const { user,dispatchUser } = useUser();
+  const { dispatchUser } = useUser();
   const { setIsLogged } = useAuth();
 
   //Local State
@@ -37,12 +36,14 @@ export default function SignIn() {
 
   async function onSuccess(uid) {
     const document = await getDocument("users", uid);
-    console.log(document)
+    console.log(document);
     await dispatchUser({ type: "SET_USER", payload: document });
-    document.role === 'admin' ? location.push("/admin-page"):location.push("/")
+    document.role === "admin"
+      ? location.push("/admin-page")
+      : location.push("/");
     setIsLogged(true);
   }
-  
+
   function onFailure(message) {
     setErrorMessage(message);
   }

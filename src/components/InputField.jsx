@@ -7,7 +7,7 @@ export default function InputField({ options, onChange, values }) {
   return (
     <fieldset>
       <input
-      className='input_primary'
+        className="input_primary"
         type={type}
         ref={inputReference}
         placeholder={placeholder}

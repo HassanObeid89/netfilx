@@ -41,9 +41,9 @@
   position: absolute;
   top: 60px;
   right: 60px;
-  background-color: rgba(0, 0, 0, .72);
+  background-color: rgba(0, 0, 0, 0.72);
   padding: 30px 30px 30px 15px;
-  border: 0.1px solid rgba(255,255,255,.85);
+  border: 0.1px solid rgba(255, 255, 255, 0.85);
   color: white;
   font-size: 14px;
   display: flex;
@@ -53,8 +53,8 @@
   z-index: 2;
 }
 
-.drop button{
-  background-color: rgba(0, 0, 0, .72);
+.drop button {
+  background-color: rgba(0, 0, 0, 0.72);
   border: 0;
   color: white;
   margin: 0;
@@ -62,13 +62,13 @@
   cursor: pointer;
 }
 
-.drop p{
+.drop p {
   cursor: pointer;
 }
 
-.drop button:hover{
+.drop button:hover {
   text-decoration: underline;
 }
-.drop p:hover{
+.drop p:hover {
   text-decoration: underline;
 }

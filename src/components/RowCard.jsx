@@ -3,12 +3,12 @@ import { useState } from "react";
 import ModalContainerMini from "./ModalContainerMini";
 export default function RowCard({ show }) {
   const [miniModal, setMiniModal] = useState(null);
-  
+
   return (
     <div className="card_wrapper">
-       <li>
-         <img
-         style={{width:"250px"}}
+      <li>
+        <img
+          style={{ width: "250px" }}
           src={show.imgUrl}
           alt=""
           onMouseEnter={() =>

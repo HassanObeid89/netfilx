@@ -17,10 +17,8 @@ export default function FormAddSeason() {
 
   const Seasons = shows
     .filter((serie) => serie.id === id)
-    .map((serie) => (
-      <EpisodeList key={serie.id} show={serie} />
-    ));
-      
+    .map((serie) => <EpisodeList key={serie.id} show={serie} />);
+
   //Methods
   async function onUpdate(event) {
     event.preventDefault();
@@ -42,12 +40,19 @@ export default function FormAddSeason() {
   }
 
   return (
-    <form className='form-wrapper'>
-      <p>Click add season if you want to add new one or add episode to add new episode to existing season</p>
+    <form className="form-wrapper">
+      <p>
+        Click add season if you want to add new one or add episode to add new
+        episode to existing season
+      </p>
       <button className="primary-button" onClick={(event) => onUpdate(event)}>
         Add Season
       </button>
-      {serie.seasons !== {} ? Seasons : <p>No Seasons yet! Click Add Season To Add One</p>}
+      {serie.seasons !== {} ? (
+        Seasons
+      ) : (
+        <p>No Seasons yet! Click Add Season To Add One</p>
+      )}
       <button className="primary-button" onClick={(event) => goBack(event)}>
         Cancel
       </button>

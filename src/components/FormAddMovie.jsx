@@ -65,7 +65,11 @@ export default function FormAddMovie() {
         <option value="16+">16+</option>
         <option value="18+">18+</option>
       </select>
-      <button onClick={(event)=>onCreate(event)} className="primary-button" type="submit">
+      <button
+        onClick={(event) => onCreate(event)}
+        className="primary-button"
+        type="submit"
+      >
         Submit
       </button>
       <button className="primary-button" onClick={(event) => goBack(event)}>
