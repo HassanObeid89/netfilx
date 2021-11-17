@@ -9,7 +9,8 @@ import signinFields from "../data/signin-fields.json";
 import InputField from "../components/InputField";
 import { useUser } from "../state/UserProvider";
 import { useAuth } from "../state/AuthProvider";
-
+import background from "../assets/images/loginBackground.jpeg";
+import logo from "../assets/images/netlogo.png";
 export default function SignIn() {
   //Global state
   const { dispatchUser } = useUser();
@@ -55,11 +56,19 @@ export default function SignIn() {
     />
   ));
   return (
-    <form onSubmit={onSubmit}>
-      <h1>sign in</h1>
-      {inputFields}
-      {errorMessage}
-      <button className="primary-button">Sign In</button>
-    </form>
+    <div className="loginScreen">
+      <div className="login_background">
+        <img className="login_logo" src={logo} />
+        <div className="login_gradient" />
+      </div>
+      <div className="login_body">
+        <h1>Sign In</h1>
+        <form onSubmit={onSubmit}>
+          {inputFields}
+          {errorMessage}
+          <button className="primary-button">Sign In</button>
+        </form>
+      </div>
+    </div>
   );
 }

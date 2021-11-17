@@ -1,26 +1,13 @@
 //Npm packge
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Project files
 import ShowCard from "../components/ShowCard";
 import { useShow } from "../state/ShowsProvider";
-import { logout } from "../scripts/authentication";
-import { useAuth } from "../state/AuthProvider";
 
 export default function AdminPage() {
   //Global state
   const { shows } = useShow();
-  const { setIsLogged } = useAuth();
-  //Properties
-  const location = useHistory();
-
-  //Methods
-  async function onLogout() {
-    await logout();
-
-    setIsLogged(false);
-    location.push("/");
-  }
 
   const Movies = shows
     .filter((movie) => movie.category === "movies")
@@ -53,7 +40,7 @@ export default function AdminPage() {
       <Link className="primary-button" to="/add-serie">
         Add Serie
       </Link>
-      {/* <button onClick={onLogout}>Sign Out</button> */}
+      
     </div>
   );
 }
