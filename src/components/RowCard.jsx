@@ -8,6 +8,7 @@ export default function RowCard({ show }) {
     <div className="card_wrapper">
        <li>
          <img
+         style={{width:"250px"}}
           src={show.imgUrl}
           alt=""
           onMouseEnter={() =>

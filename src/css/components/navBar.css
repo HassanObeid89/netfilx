@@ -29,3 +29,8 @@
   width: 30px;
   cursor: pointer;
 }
+.nav_left {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}

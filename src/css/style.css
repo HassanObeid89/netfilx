@@ -21,3 +21,5 @@
 @import "./components/formAddSeason.css";
 @import "./components/signIn.css";
 @import "./components/signup.css";
+@import "./components/errorPage.css";
+@import "./components/search.css";

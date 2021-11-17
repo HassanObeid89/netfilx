@@ -15,6 +15,7 @@ import ModalContainer from "../components/ModalContainer";
 import { useAuth } from "../state/AuthProvider";
 import { getCollection } from "../scripts/firestore";
 import { useShow } from "../state/ShowsProvider";
+import RowCard from "../components/RowCard";
 
 export default function Logged() {
   //Global state
@@ -55,6 +56,7 @@ export default function Logged() {
           <Route path="/add-movie" component={FormAddMovies} />
           <Route path="/admin-page" component={AdminPage} />
           <Route path="/watch/:id" component={VideoPlayer} />
+          {/* <Route path="/search" component={RowCard}/> */}
           <ModalContainer />
         </div>
       )}
