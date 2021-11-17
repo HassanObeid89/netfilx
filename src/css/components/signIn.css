@@ -1,53 +1,66 @@
 .loginScreen {
   position: relative;
   height: 100%;
-  background: url("../../assets/images/loginBackground.jpeg") no-repeat;
+  background: url("../../assets/images/loginBackground.jpeg") left no-repeat;
   background-size: cover;
 }
 
 .login_logo {
-  position: fixed;
+  position: absolute;
   left: 0;
-  width: 150px;
+  top: 0;
+  width: 220px;
   object-fit: contain;
   padding-left: 20px;
 }
+
 .login_gradient {
   width: 100%;
-  height: 120vh;
+  height: 145vh;
   z-index: 1;
   background: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0.5) 0,
     rgba(0, 0, 0, 0) 60%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.5) 100%
   );
 }
-.login-body:before {
-    content: "";
-    height: 91px;
-    display: block;
-}
+
 
 .login_body {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 10%);
+  transform: translate(-50%, 15%);
   z-index: 1;
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
   width: 450px;
   padding: 60px 30px 40px;
-  
   margin-bottom: 90px;
   min-height: 660px;
-  margin: 0 auto -236px
-
 }
 
 .login_body h1{
-    padding: 0 38px 20px;
-    /* font-family: var(--font-family); */
+  margin: 0px 38px 20px;
+}
+
+.login_body .signup{
+  margin: 40px 38px 20px;
+  display: flex;
+}
+.login_body .signup a{
+  margin-left: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.login_body .signup p {
+  color: #737373;
+}
+
+.login_body .signup a:hover{
+  text-decoration: underline;
 }

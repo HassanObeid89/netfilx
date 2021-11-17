@@ -1,6 +1,6 @@
 //Npm package
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 //Project files
 import signupFields from "../data/signup-fields";
@@ -51,10 +51,19 @@ export default function SignUp() {
   ));
 
   return (
-    <form onSubmit={onSubmit}>
-      <h1>sign up</h1>
-      {inputFields}
-      <button className="primary-button">Sign Up</button>
-    </form>
+    <div className="signupScreen">
+      <section className="login_body">
+        <h1>Sign Up</h1>
+        <form onSubmit={onSubmit}>
+          {inputFields}
+          <button className="primary-button">Sign Up</button>
+        </form>
+        <section className="signup">
+          <p>Already member?</p>
+           <Link to="/">Sign in</Link>
+        </section>
+         
+      </section>
+    </div>
   );
 }

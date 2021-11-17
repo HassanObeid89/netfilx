@@ -1,6 +1,6 @@
 //Npm package
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 //Project files
 import { getDocument } from "../scripts/firestore";
@@ -61,14 +61,18 @@ export default function SignIn() {
         <img className="login_logo" src={logo} />
         <div className="login_gradient" />
       </div>
-      <div className="login_body">
+      <section className="login_body">
         <h1>Sign In</h1>
         <form onSubmit={onSubmit}>
           {inputFields}
           {errorMessage}
           <button className="primary-button">Sign In</button>
         </form>
-      </div>
+        <section className="signup">
+          <p>New to Netflix?</p>
+          <Link to="/sign-up">Sign up now</Link>
+        </section>
+      </section>
     </div>
   );
 }
