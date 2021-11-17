@@ -6,7 +6,6 @@ input {
   height: 50px;
   line-height: 50px;
   padding: 16px 20px 0;
-  margin-bottom: 20px;
   width: 100%;
   outline: 0;
   position: relative;
@@ -61,7 +60,7 @@ label span {
 }
 
 input:placeholder-shown ~ label span {
-  font-size: 18px;
+  font-size: 16px;
   cursor: text;
   top: 30px;
 }

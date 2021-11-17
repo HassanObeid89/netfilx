@@ -16,3 +16,8 @@
 @import "./components/modalDetails.css";
 @import "./components/dropdown.css";
 @import "./components/episodeCard.css";
+@import "./components/adminPage.css";
+@import "./components/showCard.css";
+@import "./components/formAddSeason.css";
+@import "./components/signIn.css";
+@import "./components/signup.css";

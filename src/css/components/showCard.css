@@ -1,0 +1,25 @@
+.shows-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+.showCard{
+    width: 230px;
+    height: auto;
+    margin-right: 12px;
+    margin-bottom: 30px;
+}
+.showCard img{
+    width: 100%;
+    height: 70%;
+}
+
+.showCard p {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.showCard a{
+    width: 100%;
+    margin-bottom: 50px;
+}
