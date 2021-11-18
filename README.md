@@ -7,6 +7,8 @@ This is a Netflix clone with admin interface that allow the admin to create new 
 User name: admin@admin.com
 Password: 12345678
 
+[Visit the Website](https://netflix-92de3.firebaseapp.com/)
+
 The project is done with the latest version of React and uses functional components with Hooks for better modularity in case it needs to be expanded and firebase services for backend.
 
 ---
@@ -43,5 +45,3 @@ Beside React JS and it's own dependencies, this project uses:
 
 
 The User Flow allows to visualize the interactions with the web app.
-
-[Website](https://netflix-92de3.firebaseapp.com/)
