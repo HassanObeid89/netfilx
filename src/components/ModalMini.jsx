@@ -10,6 +10,7 @@ export default function ModalMini({ show, setMiniModal }) {
 
   function onOpen() {
     dispatchModal({ type: "SET_MODAL", payload: <ModalDetails show={show} /> });
+
     let windowOffset = window.scrollY;
     document
       .getElementById("root")

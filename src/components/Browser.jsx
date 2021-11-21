@@ -10,10 +10,9 @@ export default function Browser() {
   const { isLogged } = useAuth();
 
   return (
+    // You don't need the <> you can write the isLogged directly
     <BrowserRouter>
-      <Switch>
-        <>{isLogged ? <Logged /> : <UnLogged />}</>
-      </Switch>
+      <Switch>{isLogged ? <Logged /> : <UnLogged />}</Switch>
     </BrowserRouter>
   );
 }

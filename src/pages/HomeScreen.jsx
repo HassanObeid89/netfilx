@@ -12,6 +12,11 @@ export default function HomeScreen({ setMiniModal }) {
     (documentary) => documentary.category === "documentaries"
   );
 
+  /**
+   * Architecture -1
+   * If every <Row/> needs setMiniModal with the same value, then import it inside Row instead.
+   * If you need to pass it as a prop from the parent (HomeScreen) then it may need to be global
+   */
   return (
     <div className="home_page">
       <Banner series={Series} />

@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
+/**
+ * Code quality -1
+ * This component is really messy, to the point that is a "hack" to solve the problem instead of a real implementation.
+ * During the website review stage, I understood the lack of a real dropdown menu due to the time constrain. That was undestanable.
+ * What is not acceptable is that the alternative is a code that is really complex and hard to understand.
+ *
+ * The solution was:
+ * 1. Take a break from the project.
+ * 2. In your product backlog (this is why you need one), "create an spike" to learn about the dropdown menu: https://blog.logrocket.com/building-a-custom-dropdown-menu-component-for-react-e94f02ced4a1/
+ * 3. Implement it into your project.
+ */
 export default function Dropdown({ state, show }) {
   const [open, setOpen] = useState(false);
   const [isSelected, setIsSelected] = state;

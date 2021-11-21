@@ -15,7 +15,7 @@ import ModalContainer from "../components/ModalContainer";
 import { useAuth } from "../state/AuthProvider";
 import { getCollection } from "../scripts/firestore";
 import { useShow } from "../state/ShowsProvider";
-import RowCard from "../components/RowCard";
+import RowCard from "../components/RowCard"; // No unused imports in production -1
 
 export default function Logged() {
   //Global state

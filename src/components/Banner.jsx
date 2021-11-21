@@ -2,6 +2,12 @@ import { GrPlayFill } from "react-icons/gr";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import squid from "../assets/images/squid_banner.webp";
 import squidName from "../assets/images/squid_name.webp";
+
+/**
+ * CSS architecture -1
+ * This comment is not only for Banner but several components. Im putting it here because is the first component inside the components/ folder.
+ * You are hardoding CSS into the JSX, you should conditionally toggle CSS classNames instead: https://www.pluralsight.com/guides/applying-classes-conditionally-react
+ */
 export default function Banner() {
   return (
     <header>

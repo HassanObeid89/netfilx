@@ -14,6 +14,9 @@ export default function EpisodeList({ show }) {
       <EpisodeCard episode={episode} />
     ));
 
+  // Refactor -1
+  // This component is hard to read because it has many conditionals.
+  // To refactor, break down each conditional as a sub component
   return (
     <div>
       {show.seasons[isSelected] !== undefined ? (
